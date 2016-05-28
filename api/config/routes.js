@@ -2,8 +2,8 @@ var express  = require('express');
 var router   = express.Router();
 
 // ***** CONTROLLERS ***** //
-var usersController           = require('../controllers/users');
-var authenticationsController = require('../controllers/authentications');
+var usersController           = require('../controllers/usersController');
+var authenticationsController = require('../controllers/authenticationsController');
 
 // ***** ROUTES ***** //
 router.post('/login', authenticationsController.login);

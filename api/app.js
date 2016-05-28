@@ -7,7 +7,7 @@ var mongoose       = require("mongoose");
 var passport       = require("passport");
 var expressJWT     = require("express-jwt");
 var routes         = require("./config/routes");
-var controllers    = require("cors");
+var cors           = require("cors");
 
 var app = express();
 
