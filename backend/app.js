@@ -4,6 +4,7 @@ var morgan         = require('morgan');
 var methodOverride = require("method-override");
 var bodyParser     = require("body-parser");
 var mongoose       = require("mongoose");
+var passport       = require("passport");
 
 var app = express();
 
