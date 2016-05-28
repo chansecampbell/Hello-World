@@ -8,8 +8,18 @@ module.exports = function(grunt) {
     bower_concat: {
       all: {
         dest: {
-          'js': 'public/src/js/_bower.js'
+          'js': 'public/src/js/_bower.js',
+          'css': 'public/src/scss/_bower.scss'
         },
+        mainFiles: {
+          bootstrap: [
+            'dist/js/bootstrap.js',
+            'dist/css/bootstrap.css'
+          ]
+        },
+          dependencies: {
+            bootstrap: ["jquery", "tether"]
+          }
       },
     },
     sass: {
