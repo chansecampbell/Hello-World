@@ -6,6 +6,8 @@ var bodyParser     = require("body-parser");
 var mongoose       = require("mongoose");
 var passport       = require("passport");
 var expressJWT     = require("express-jwt");
+var routes         = require("./config/routes");
+var controllers    = require("cors");
 
 var app = express();
 
@@ -23,6 +25,8 @@ app.use(methodOverride(function(req, res){
     return method;
   }
 }));
+
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -43,6 +47,8 @@ app.use(function (err, req, res, next) {
   }
   next();
 });
+
+app.use("/api", routes);
 
 app.listen(config.port, function(){
   console.log("Express is alive and kicking on port: ", config.port);
