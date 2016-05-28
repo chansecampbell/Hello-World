@@ -1,0 +1,17 @@
+{
+  "name": "wdi-project-4",
+  "description": "My final project at WDI London",
+  "main": "app.js",
+  "authors": [
+    "chansecampbell <chansecampbell@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/chansecampbell/wdi-project-4",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
