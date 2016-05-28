@@ -8,6 +8,11 @@ var passport       = require("passport");
 
 var app = express();
 
+mongoose.connect(config.database);
+
+require("./config/passport")(passport);
+
+
 app.use(morgan("dev"));
 
 app.use(methodOverride(function(req, res){
@@ -21,7 +26,7 @@ app.use(methodOverride(function(req, res){
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect(config.database);
+app.use(passport.initialize());
 
 app.listen(config.port, function(){
   console.log("Express is alive and kicking on port: ", config.port);
