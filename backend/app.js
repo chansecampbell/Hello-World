@@ -5,6 +5,7 @@ var methodOverride = require("method-override");
 var bodyParser     = require("body-parser");
 var mongoose       = require("mongoose");
 var passport       = require("passport");
+var expressJWT     = require("express-jwt");
 
 var app = express();
 
@@ -27,6 +28,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(passport.initialize());
+
+app.use('/api', expressJWT({ secret: config.secret })
+  .unless({
+    path: [
+      { url: '/api/login', methods: ['POST'] },
+      { url: '/api/register', methods: ['POST'] }
+    ]
+  }));
+
+app.use(function (err, req, res, next) {
+  if (err.name === 'UnauthorizedError') {
+    return res.status(401).json({message: 'Unauthorized request.'});
+  }
+  next();
+});
 
 app.listen(config.port, function(){
   console.log("Express is alive and kicking on port: ", config.port);
