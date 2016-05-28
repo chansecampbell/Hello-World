@@ -9,17 +9,18 @@ function register(req, res, next) {
     if (info) return res.status(401).json(info);
     if (!user) return res.status(401).json(info);
 
-    // Send back the token to the front-end to store
+    var payload = user._id;
+    var token   = jwt.sign(payload, secret, { expiresIn: 60*60*24 });
+
     return res.status(200).json({
       success: true,
       message: "Thank you for authenticating",
-      user: user
+      user: user,
+      token: token
     });
   });
-
   return localStrategy(req, res, next);
 }
-
 
 function login(req, res, next) {
   User.findOne({
@@ -29,10 +30,14 @@ function login(req, res, next) {
     if (!user) return res.status(403).json({ message: 'No user found.' });
     if (!user.validatePassword(req.body.password)) return res.status(403).json({ message: 'Authentication failed.' });
 
+    var payload = user._id;
+    var token   = jwt.sign(payload, secret, { expiresIn: 60*60*24 });
+
     return res.status(200).json({
       success: true,
-      message: 'Welcome!',
-      user: user
+      message: "Thank you for authenticating",
+      user: user,
+      token: token
     });
   });
 }
