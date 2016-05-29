@@ -8,11 +8,11 @@ function User($resource, API){
   return $resource(
     API+'/users/:id', {id: '@id'},
     { 'get':       { method: 'GET' },
-      'save':      { method: 'POST' },
-      'query':     { method: 'GET', isArray: false},
-      'remove':    { method: 'DELETE' },
-      'delete':    { method: 'DELETE' },
-      'register': {
+  'save':      { method: 'POST' },
+  'query':     { method: 'GET', isArray: false},
+  'remove':    { method: 'DELETE' },
+  'delete':    { method: 'DELETE' },
+  'register': {
     url: API +'/register',
     method: "POST"
   },
@@ -20,6 +20,6 @@ function User($resource, API){
     url: API + '/login',
     method: "POST"
   }
-      }
+}
   );
 }

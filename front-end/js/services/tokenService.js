@@ -12,8 +12,8 @@ function TokenService($window, jwtHelper){
   self.decodeToken = decodeToken;
 
   function setToken(token){
-    return $window.localStorage.setItem('auth-token', token);
-  }
+  return $window.localStorage.setItem('auth-token', token);
+}
 
   function getToken() {
   return $window.localStorage['auth-token'];
@@ -21,13 +21,13 @@ function TokenService($window, jwtHelper){
 
   function removeToken() {
     return $window.localStorage.removeItem('auth-token');
-  }
+}
 
   function decodeToken() {
-    var token = self.getToken();
-    if (token) {
-      var decodedUser = jwtHelper.decodeToken(token);
-      return token ? decodedUser._doc : null;
-    }
+  var token = self.getToken();
+  if (token) {
+    var decodedUser = jwtHelper.decodeToken(token);
+    return token ? decodedUser._doc : null;
   }
+}
 }
