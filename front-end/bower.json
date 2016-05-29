@@ -1,0 +1,25 @@
+{
+  "name": "front-end",
+  "homepage": "https://github.com/chansecampbell/wdi-project-4",
+  "authors": [
+    "chansecampbell <chansecampbell@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.6",
+    "angular-messages": "^1.5.6",
+    "angular-ui-router": "ui-router#^0.3.0",
+    "angular-jwt": "^0.0.9",
+    "angular-resource": "^1.5.6",
+    "bootstrap": "^3.3.6"
+  }
+}
