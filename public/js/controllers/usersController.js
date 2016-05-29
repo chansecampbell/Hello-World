@@ -27,6 +27,7 @@ function UsersController(User, CurrentUser, $state) {
     function handleLogin(res) {
         var token = res.token ? res.token : null;
         if (token) {
+          console.log("found a token");
             self.getUsers();
             $state.go('home');
         }
