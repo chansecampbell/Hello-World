@@ -20,6 +20,7 @@ angular
   function getUsers() {
     User.query(function(data){
       self.all = data.users;
+      // console.log(self.all);
     });
   }
 
