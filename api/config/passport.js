@@ -18,15 +18,16 @@ module.exports = function(passport) {
       if (user) return done(null, false, { message: "Please choose another email." });
 
       var newUser            = new User();
-      newUser.local.email    = email;
+      newUser.local.email    = req.body.email;
       newUser.local.username = req.body.username;
       newUser.local.fullname = req.body.fullname;
       newUser.local.image    = req.body.image;
-      newUser.local.password = User.encrypt(password);
+      newUser.local.password = req.body.password;
+      newUser.local.passwordConfirmation = req.body.passwordConfirmation;
 
       newUser.save(function(err, user) {
         // Error found
-        console.log(err)
+        console.log(err);
         if (err) return done(err, false, { message: "Something went wrong." });
 
         // New user created
@@ -35,4 +36,4 @@ module.exports = function(passport) {
     });
   }));
 
-}
+};
