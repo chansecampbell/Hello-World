@@ -31,6 +31,7 @@ function UsersController(User, CurrentUser, $state) {
             $state.go('home');
         }
         self.currentUser = CurrentUser.getUser();
+        console.log(self.currentUser);
     }
 
     function handleError(e) {
@@ -38,10 +39,12 @@ function UsersController(User, CurrentUser, $state) {
     }
 
     function register() {
+      console.log("registering..");
         User.register(self.user, handleLogin, handleError);
     }
 
     function login() {
+      console.log("signing in..");
         User.login(self.user, handleLogin, handleError);
     }
 

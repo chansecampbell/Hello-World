@@ -7,7 +7,7 @@ function CurrentUser(TokenService){
     var self = this;
     self.getUser = getUser;
     self.clearUser = clearUser;
-    self.user = getUser();
+    self.user = getUser;
 
     function getUser() {
         return self.user ? self.user : TokenService.decodeToken();
