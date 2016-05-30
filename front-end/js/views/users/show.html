@@ -5,6 +5,10 @@
       <div class="caption">
         <h3>{{ users.user.name | uppercase }}</h3>
         <p>{{ users.user.email }}</p>
+        <form id="edit-user" ng-submit="users.updateUser(users.user)">
+          <input type="text" name='edit-name' id="edit-name" ng-model="users.user.name">
+          <input type="submit" value='Update' id="submit">
+        </form>
       </div>
     </div>
   </div>

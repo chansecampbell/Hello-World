@@ -12,6 +12,7 @@ angular
   self.currentUser   = null;
   self.error         = null;
   self.getUsers      = getUsers;
+  self.updateUser    = updateUser;
   self.register      = register;
   self.login         = login;
   self.logout        = logout;
@@ -22,6 +23,13 @@ angular
       self.all = data.users;
     });
   }
+
+  function updateUser(user) {
+    console.log("hello, hello");
+      User.update({ id: self.user._id }, { user: self.user }, function(){
+        self.user = {};
+      });
+    } 
 
 
 self.authenticate = function(provider) {
