@@ -1,3 +1,11 @@
 .media-object {
   max-width: 60px;
 }
+
+.angular-google-map-container { height: 400px; }
+
+
+#google-map {
+  height: 400px;
+  width: 400px;
+}
