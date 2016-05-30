@@ -9,6 +9,8 @@ var cookieParser   = require("cookie-parser");
 var methodOverride = require("method-override");
 var jwt            = require('jsonwebtoken');
 var expressJWT     = require('express-jwt');
+var request        = require('request-promise');
+var qs             = require('qs');
 var app            = express();
 
 var config         = require('./config/config');
@@ -51,6 +53,12 @@ app.use(function (err, req, res, next) {
 
 var routes = require('./config/routes');
 app.use("/api", routes);
+
+app.use(express.static(__dirname + "/front-end"));
+
+app.get("*", function(req, res) {
+    res.sendFile(__dirname + "/front-end/index.html");
+});
 
 app.listen(config.port);
 console.log("Express is alive and kicking on port " + config.port);

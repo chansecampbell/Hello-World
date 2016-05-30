@@ -17,6 +17,10 @@ angular
   self.logout        = logout;
   self.checkLoggedIn = checkLoggedIn;
 
+  // self.authenticate = function(provider) {
+  // $auth.authenticate(provider);
+  // };
+
   function getUsers() {
     User.query(function(data){
       self.all = data.users;
