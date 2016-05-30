@@ -53,3 +53,4 @@ var routes = require('./config/routes');
 app.use("/api", routes);
 
 app.listen(config.port);
+console.log("Express is alive and kicking on port " + config.port);
