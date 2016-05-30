@@ -8,10 +8,19 @@
   <script src="./bower_components/angular-jwt/dist/angular-jwt.js" charset="utf-8"></script>
   <script src="./bower_components/angular-resource/angular-resource.js" charset="utf-8"></script>
   <script src="./bower_components/jquery/dist/jquery.js" charset="utf-8"></script>
+
+
   <script src="./bower_components/bootstrap/dist/js/bootstrap.js" charset="utf-8"></script>
 
-  <link rel="stylesheet" type="text/css" href="./bower_components/jvectormap/jquery-jvectormap.css">
-  <script src="./bower_components/jvectormap/jquery-jvectormap.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="./bower_components/bower-jvectormap/jquery-jvectormap-1.2.2.css">
+
+  <script src="./bower_components/bower-jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+
+  <script src="./bower_components/bower-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+
+
+
 
   <script src="./bower_components/ngmap/build/scripts/ng-map.min.js"></script>
   <script src="http://maps.google.com/maps/api/js"></script>
@@ -73,6 +82,13 @@
       </div><!-- /.container-fluid -->
     </nav>
   </header>
+  
+  <div id="world-map" style="width: 600px; height: 400px"></div>
+  <script>
+    $(function(){
+      $('#world-map').vectorMap({map: 'world_mill_en'});
+    });
+  </script>
   <main class="container" ui-view></main>
 
 </body>
