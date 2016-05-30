@@ -60,7 +60,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li ng-show="users.checkLoggedIn()">
-              <a href="#">Welcome, {{ users.user.name }}</a>
+              <a href="#">Welcome, {{ users.currentUser.name }}</a>
             </li>
             <li ng-show="users.checkLoggedIn()">
               <a href="#" ui-sref="users">Users</a>
