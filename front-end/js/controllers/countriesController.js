@@ -1,8 +1,8 @@
 angular
   .module('logging')
-  .controller('MapsController', MapsController);
+  .controller('CountriesController', CountriesController);
 
-function MapsController() {
+function CountriesController() {
   var self = this;
 
   self.countries = {

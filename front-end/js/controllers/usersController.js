@@ -24,11 +24,13 @@ angular
     });
   }
 
-  function updateUser(user) {
-    console.log("hello, hello");
-      User.update({ id: self.user._id }, { user: self.user }, function(){
-        self.user = {};
+  function updateUser() {
+      User.update({ id: self.user._id }, { user: self.user }, function(data){
+        console.log('data: ', data)
+        self.user = data;
       });
+      self.currentUser = CurrentUser.getUser();
+      self.getUsers();
     } 
 
 

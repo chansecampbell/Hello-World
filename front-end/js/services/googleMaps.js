@@ -1,5 +1,5 @@
 angular
   .module('logging')
-  .controller('MapsController', function() {
+  .controller('CountriesController', function() {
  
     });
