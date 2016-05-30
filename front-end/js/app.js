@@ -2,7 +2,7 @@ angular
   .module('logging', ['angular-jwt', 'ngResource', 'ui.router', 'satellizer'])
   .constant('API', 'http://localhost:3000/api')
   .config(MainRouter)
-  // .config(oauthConfig)
+  .config(oauthConfig)
   .config(function($httpProvider) {
     $httpProvider.interceptors.push('authInterceptor');
   });
@@ -39,11 +39,10 @@ function MainRouter($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/");
 }
 
-// oauthConfig.$inject = ['API', '$authProvider'];
-// function oauthConfig(API, $authProvider) {
-//   $authProvider.facebook({
-//     url: API + '/auth/facebook',
-//     clientId: '141789976235702', // replace with your facebook client id
-//   });
-//
-// }
+oauthConfig.$inject = ['API', '$authProvider'];
+function oauthConfig(API, $authProvider) {
+  $authProvider.facebook({
+    url: API + '/auth/facebook',
+    clientId: '1', // replace with your facebook client id
+  });
+}

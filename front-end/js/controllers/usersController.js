@@ -2,8 +2,8 @@ angular
   .module('logging')
   .controller('UsersController', UsersController);
 
-  UsersController.$inject = ['User', 'CurrentUser', '$state'];
-  function UsersController(User, CurrentUser, $state){
+  UsersController.$inject = ['User', 'CurrentUser', '$state', '$auth'];
+  function UsersController(User, CurrentUser, $state, $auth){
 
   var self = this;
 
@@ -23,6 +23,19 @@ angular
       // console.log(self.all);
     });
   }
+
+/* Begin satellizer experiment */
+
+self.authenticate = function(provider) {
+  $auth.authenticate(provider);
+};
+
+self.hello = function(){
+  console.log('hello!');
+};
+
+/* End satellizer experiment */
+
 
   function handleLogin(res) {
     var token = res.token ? res.token : null;

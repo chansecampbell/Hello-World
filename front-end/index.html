@@ -9,12 +9,15 @@
   <script src="./bower_components/angular-resource/angular-resource.js" charset="utf-8"></script>
   <script src="./bower_components/jquery/dist/jquery.js" charset="utf-8"></script>
   <script src="./bower_components/bootstrap/dist/js/bootstrap.js" charset="utf-8"></script>
-  <script src='//maps.googleapis.com/maps/api/js?key=AIzaSyBxM36DxD-TmmCuWMML0UXBVSirOUkF42Q'></script>
-  <script src="./bower_components/angular-google-maps/dist/angular-google-maps.js" charset="utf-8"></script>
+  <!-- <script src='//maps.googleapis.com/maps/api/js?key=AIzaSyBxM36DxD-TmmCuWMML0UXBVSirOUkF42Q'></script>
+  <script src="./bower_components/angular-google-maps/dist/angular-google-maps.js" charset="utf-8"></script> -->
   <script src="//cdn.jsdelivr.net/satellizer/0.13.1/satellizer.min.js"></script>
   <script src="./js/app.js"></script>
   <script src="./js/models/user.js"></script>
+
   <script src="./js/controllers/usersController.js"></script>
+
+
   <script type="text/javascript" src="js/services/authInterceptor.js"></script>
   <script type="text/javascript" src="js/services/tokenService.js"></script>
   <script type="text/javascript" src="js/services/currentUser.js"></script>
@@ -52,6 +55,9 @@
             </li>
             <li ng-show="users.checkLoggedIn()">
               <a href="#"ui-sref="home" ng-click="users.logout()">Logout</a>
+            </li>
+            <li>
+              <button ng-click="users.authenticate('facebook')">Sign in with Facebook</button>
             </li>
           </ul>
         </div>

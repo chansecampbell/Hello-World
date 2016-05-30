@@ -9,4 +9,7 @@ function MainController($auth) {
     $auth.authenticate(provider);
   };
 
+  this.hello = function(){
+    console.log('hello!');
+  };
 }
