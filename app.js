@@ -41,13 +41,13 @@ app.use(cors({
 // After the user logs in with facebook, facebook's server will send a request to this endpoint
 // with a code and a client id, which we will use to get an access token
 app.post('/api/auth/facebook', function(req, res) {
-  console.log("Response ", res);
   var params = {
     code: req.body.code,
     client_id: req.body.clientId,
     client_secret: process.env.SATELIZER_FACEBOOK_API_SECRET,
     redirect_uri: config.appUrl + "/"
   };
+  console.log(params);
 
   // step 1, we make a request to facebook for an access token
   request.get({ url: config.oauth.facebook.accessTokenUrl, qs: params, json: true })

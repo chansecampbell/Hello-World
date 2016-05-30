@@ -43,6 +43,6 @@ oauthConfig.$inject = ['API', '$authProvider'];
 function oauthConfig(API, $authProvider) {
   $authProvider.facebook({
     url: API + '/auth/facebook',
-    clientId: '1', // replace with your facebook client id
+    clientId: '1' // replace with your facebook client id
   });
 }
