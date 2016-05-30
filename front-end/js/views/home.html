@@ -3,7 +3,29 @@
   <!-- <ui-gmap-google-map center='map.center' zoom='map.zoom' id="google-map"></ui-gmap-google-map> -->
 
   <div ng-app="ngMap">
-    <ng-map center="[40.74, -74.18]"></ng-map>
+    <ng-map center="[55.3781, 3.4360]" zoom="2">
+      <fusion-tables-layer
+     query= "{
+       select: 'geometry',
+       from: '1N2LBk4JHwWpOY4d9fobIn27lfnZ5MDy-NoqqRpk'}",
+     styles="[{
+       polygonOptions: {
+         fillColor: '#00FF00',
+         fillOpacity: 0.3
+       }
+     }, {
+       where: 'birds > 300',
+       polygonOptions: {
+         fillColor: '#0000FF'
+       }
+     }, {
+       where: 'population > 5',
+       polygonOptions: {
+         fillOpacity: 1.0
+       }
+     }]">
+   </fusion-tables-layer>
+    </ng-map>
   </div>
 
   <!-- <div map-lazy-load="https://maps.google.com/maps/api/js">
