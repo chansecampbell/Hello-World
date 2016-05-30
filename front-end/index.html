@@ -82,14 +82,21 @@
       </div><!-- /.container-fluid -->
     </nav>
   </header>
-  
-  <div id="world-map" style="width: 600px; height: 400px"></div>
+  <main class="container" ui-view></main>
+<!--   <div id="world-map" style="width: 800px; height: 400px"></div>
   <script>
     $(function(){
-      $('#world-map').vectorMap({map: 'world_mill_en'});
+      $('#world-map').vectorMap({
+        map: 'world_mill_en',
+        series: {
+           regions: [{
+             values: 'AF',
+             scale: ['#C8EEFF', '#0071A4'],
+             normalizeFunction: 'polynomial'
+           }]
+         }
+       });
     });
-  </script>
-  <main class="container" ui-view></main>
-
+  </script> -->
 </body>
 </html>

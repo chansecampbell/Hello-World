@@ -20,21 +20,15 @@ angular
   function getUsers() {
     User.query(function(data){
       self.all = data.users;
-      // console.log(self.all);
     });
   }
 
-/* Begin satellizer experiment */
 
 self.authenticate = function(provider) {
   $auth.authenticate(provider);
+  $state.go("home");
+  self.getUsers();
 };
-
-self.hello = function(){
-  console.log('hello!');
-};
-
-/* End satellizer experiment */
 
 
   function handleLogin(res) {

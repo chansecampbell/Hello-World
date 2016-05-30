@@ -1,7 +1,8 @@
 <h1>Home</h1>
-  <!-- <ui-gmap-google-map center='map.center' zoom='map.zoom' id="google-map"></ui-gmap-google-map> -->
-
-  <div ng-app="ngMap">
+  <div ng-controller="MapsController as maps">
+  <div ng-modal="maps.map" id="world-map"></div>
+  </div>
+ <!--   <div ng-app="ngMap">
     <ng-map center="[55.3781, 3.4360]" zoom="2">
       <fusion-tables-layer
      query= "{
