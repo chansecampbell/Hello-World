@@ -34,6 +34,19 @@ function MainRouter($stateProvider, $urlRouterProvider) {
           $scope.$parent.users.user = res.user;
         });
       }
+    })
+    .state('countries', {
+      url: "/countries",
+      templateUrl: "./js/views/countries/index.html"
+    })
+    .state('country', {
+      url: "/countries/:id",
+      templateUrl: "./js/views/countries/show.html",
+      controller: function($scope, $stateParams, Country) {
+        Country.get({ id: $stateParams.id }, function(res){
+          $scope.$parent.countries.country = res.country;
+        });
+      }
     });
 
   $urlRouterProvider.otherwise("/");
