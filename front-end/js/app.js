@@ -47,6 +47,19 @@ function MainRouter($stateProvider, $urlRouterProvider) {
           $scope.$parent.countries.country = res.country;
         });
       }
+    })
+    .state('journeys', {
+      url: "/journeys",
+      templateUrl: "./js/views/journeys/index.html"
+    })
+    .state('journey', {
+      url: "/journeys/:id",
+      templateUrl: "./js/views/journeys/show.html",
+      controller: function($scope, $stateParams, Journey) {
+        Journey.get({ id: $stateParams.id }, function(res){
+          $scope.$parent.journeys.journey = res.journey;
+        });
+      }
     });
 
   $urlRouterProvider.otherwise("/");

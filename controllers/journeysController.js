@@ -14,7 +14,26 @@ function journeysShow(req, res){
   });
 }
 
+function journeysUpdate(req, res){
+  var id = req.body.journey;
+  Journey.findByIdAndUpdate({ _id: id }, req.body.journey, { new: true }, function(err, journey){
+    if (err) return res.status(500).send(err);
+    if (!journey) return res.status(404).send(err);
+    res.status(200).send(journey);
+  });
+};
+
+function journeysDelete(req, res){
+  Journey.findByIdAndRemove({_id: req.params.id}, function(err){
+   if (err) return res.status(404).json({message: 'Something went wrong.'});
+   res.status(200).json({message: 'Journey has been successfully deleted'});
+  });
+}
+
+
 module.exports = {
   journeysIndex:  journeysIndex,
-  journeysShow:   journeysShow
+  journeysShow:   journeysShow,
+  journeysUpdate: journeysUpdate,
+  journeysDelete: journeysDelete
 };
