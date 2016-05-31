@@ -1,13 +1,14 @@
-<ul class="media-list">
-  <li class="media" ng-repeat="journey in journeys.all">
-    <div class="media-left">
+  <div ng-controller="JourneysController as journeys">  
+<li class="media" ng-repeat="journey in journeys.all">
+ <!--    <div class="media-left">
       <a ui-sref="journey({ id: journey._id })">
         <img class="media-object" ng-src="{{ journey.picture }}">
       </a>
-    </div>
+    </div> -->
     <div class="media-body">
       <h4 class="media-heading">{{ journey.name }}</h4>
-      <p>{{ journey.email }}</p>
+      <p>{{ journey.description }}</p>
+      <p>{{ journey.countries }}</p>
     </div>
   </li>
 </ul>

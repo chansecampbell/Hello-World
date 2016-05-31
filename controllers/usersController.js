@@ -9,7 +9,13 @@ function usersIndex(req, res) {
 
 function usersShow(req, res){
   var id = req.params.id;
-  User.findById({ _id: id }).populate("journeys").exec(function(err, user){
+  User.findById({ _id: id })
+    .populate("journeys")
+    .populate({
+      path: "journeys",
+      populate: { path: 'countries' } 
+    })
+    .exec(function(err, user){
     if (err) return res.status(404).json({message: 'Something went wrong.'});
     res.status(200).json({ user: user });
   });

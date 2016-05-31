@@ -8,11 +8,21 @@ function journeysIndex(req, res) {
 }
 
 function journeysShow(req, res){
+  var id = req.params.id;
   Journey.findById(req.params.id, function(err, journey){
     if (err) return res.status(404).json({message: 'Something went wrong.'});
     res.status(200).json({ journey: journey });
   });
 }
+
+// function usersShow(req, res){
+//   User.findById({ _id: id }).populate("projects").exec(function(err, user) {
+//     if (err) return res.status(500).send(err);
+//     if (!user) return res.status(404).send(err);
+//     res.status(200).send(user);
+//   });
+// }
+
 
 function journeysUpdate(req, res){
   var id = req.body.journey;

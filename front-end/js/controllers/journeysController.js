@@ -6,7 +6,7 @@ JourneysController.$inject = ['Journey', '$state'];
 function JourneysController(Journey, $state) {
   var self               = this;
   self.all               = [];
-  self.user              = null;
+  self.journey           = null;
   self.error             = null;
   self.getJourneys       = getJourneys;
   self.updateJourney     = updateJourney;
@@ -15,6 +15,7 @@ function JourneysController(Journey, $state) {
   function getJourneys() {
     Journey.query(function(data){
       self.all = data.journeys;
+      console.log(self.all);
     });
   }
 
@@ -30,5 +31,7 @@ function JourneysController(Journey, $state) {
       });
     }
   }
+
+  self.getJourneys();
 
   }

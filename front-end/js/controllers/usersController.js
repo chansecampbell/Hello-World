@@ -12,6 +12,7 @@ angular
   self.currentUser   = null;
   self.error         = null;
   self.getUsers      = getUsers;
+  // self.showUser      = showUser;
   self.updateUser    = updateUser;
   self.register      = register;
   self.login         = login;
@@ -23,6 +24,13 @@ angular
       self.all = data.users;
     });
   }
+
+  // function showUser(user){
+  //   User.get({id: user._id}, function(user){
+  //     console.log('user: ', user)
+  //     self.user = user;
+  //   });
+  // }
 
   function updateUser() {
       User.update({ id: self.user._id }, { user: self.user }, function(data){
