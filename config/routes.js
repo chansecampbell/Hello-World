@@ -2,6 +2,7 @@ var express = require('express');
 var router  = express.Router();
 
 var usersController = require('../controllers/usersController');
+var countriesController = require('../controllers/countriesController');
 var authenticationsController = require('../controllers/authenticationsController');
 
 router.post('/login', authenticationsController.login);
@@ -17,5 +18,11 @@ router.route('/users/:id')
   .get(usersController.usersShow)
   .put(usersController.usersUpdate)
   .delete(usersController.usersDelete);
+
+router.route('/countries')
+  .get(countriesController.countriesIndex);
+
+router.route('/countries/:id')
+  .get(countriesController.countriesShow)
 
 module.exports = router;

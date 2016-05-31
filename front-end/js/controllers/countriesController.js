@@ -5,6 +5,12 @@ angular
 function CountriesController() {
   var self = this;
 
+  function getCountries() {
+    Country.query(function(data){
+      self.all = data.users;
+    });
+  }
+
   self.countries = {
     IN:'#33ccff',
     DK:'#33ccff',
@@ -33,6 +39,27 @@ function CountriesController() {
        values: self.countries
      }]
    }
+
+
    });
+
+  // https://restcountries.eu/rest/v1/alpha/bd
+  
+  // self.listCountries = function(){
+
+  //   console.log("hello");
+  //   var countryCode = "BD";
+
+  //   $.getJSON("https://restcountries.eu/rest/v1/alpha/bd"), function (json) {
+  //       console.log(json);
+  //   }
+  // }
+
 }
+
+
+
+
+
+
 
