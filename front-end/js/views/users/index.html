@@ -1,3 +1,6 @@
+<div ng-controller="JourneysController as journeys">  
+  <div class="media" ng-repeat="journey in journeys.all">
+
 <ul class="media-list">
   <li class="media" ng-repeat="user in users.all">
     <div class="media-left">
@@ -6,9 +9,12 @@
       </a>
     </div>
     <div class="media-body">
-      <h4 class="media-heading">{{ user.name }}</h4>
-      <p>{{ user.email }}</p>
+      <h4 class="media-heading">{{ user.name }} went to {{ journey.country.name }}</h4>
+
+       
+            </li>
+          </ul>
+        </div>
     </div>
-  </li>
-</ul>
+
 

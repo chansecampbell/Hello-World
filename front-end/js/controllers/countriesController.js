@@ -20,6 +20,9 @@ function CountriesController(Country, Journey, $state, CurrentUser) {
     });
   }
 
+  self.countries = {};
+
+
   function getJourneys() {
     Journey.query(function(data){
       self.journeys = data.journeys;
@@ -27,12 +30,17 @@ function CountriesController(Country, Journey, $state, CurrentUser) {
 
       console.log(self.journeys);
 
+      // for (var i = 0; i < self.journeys.length; i++) {
+      //   var item = self.journeys[i];
+      //   self.countries.push(item);
+      //   console.log(self.countries);
+      // }
+
+
     });
 
 
       self.colour = '#33ccff';
-
-      self.countries = {};
 
       self.countries["GB"] = self.colour;
 

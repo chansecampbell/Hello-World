@@ -31,7 +31,6 @@ angular
       console.log(self.currentUser.name);
     }
 
-
   // function showUser(user){
   //   User.get({id: user._id}, function(user){
   //     console.log('user: ', user)
