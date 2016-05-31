@@ -31,6 +31,28 @@ var Journey = require("../models/journey");
   });
 
 
+  var country3 = new Country({
+    name: "Japan",
+    countryCode: "JP",
+    picture: "...."
+  })
+
+  country3.save(function(err, country) {
+    if (err) return console.log(err);
+    console.log("country added! ", country);
+  });
+
+  var country4 = new Country({
+    name: "United Kingdom",
+    countryCode: "GB",
+    picture: "...."
+  })
+
+  country4.save(function(err, country) {
+    if (err) return console.log(err);
+    console.log("country added! ", country);
+  });
+
   var user1 = new User({
       name: "John Doe",
       picture: "http://www.fillmurray.com/g/300/300",
@@ -38,7 +60,27 @@ var Journey = require("../models/journey");
       _password: "password",
       age: "21",
       gender: "Male",
-      nationality: "American",
+      nationality: "American"
+    })
+
+  var user2 = new User({
+      name: "Jane Smith",
+      picture: "http://www.fillmurray.com/g/350/350",
+      email: "jane@jane.com",
+      _password: "password",
+      age: "23",
+      gender: "Female",
+      nationality: "Spanish"
+    })
+
+  var user3 = new User({
+      name: "Bob Bobson",
+      picture: "http://www.fillmurray.com/g/400/400",
+      email: "bob@bob.com",
+      _password: "password",
+      age: "42",
+      gender: "Male",
+      nationality: "German"
     })
 
 
@@ -64,10 +106,35 @@ var Journey = require("../models/journey");
         console.log("Journey added! ", journey);
       });
 
+      var journey3 = new Journey({
+          name: "Blah blah blah",
+          description: "It wasn't that good.",
+          country: country3
+        })
+
+        journey3.save(function(err, journey) {
+          if (err) return console.log(err);
+          console.log("Journey added! ", journey);
+        });
+
+        var journey4 = new Journey({
+            name: "Blah bleh bleh",
+            description: "Amazing",
+            country: country4
+          })
+
+          journey4.save(function(err, journey) {
+            if (err) return console.log(err);
+            console.log("Journey added! ", journey);
+          });
+
 
 
 journey1.users.push(user1);
 journey2.users.push(user1);
+journey3.users.push(user2);
+journey4.users.push(user3);
+
 
 
 user1.save(function(err, user) {
@@ -75,8 +142,20 @@ user1.save(function(err, user) {
   console.log("User added! ", user);
 });
 
+user2.save(function(err, user) {
+  if (err) return console.log(err);
+  console.log("User added! ", user);
+});
+
+user3.save(function(err, user) {
+  if (err) return console.log(err);
+  console.log("User added! ", user);
+});
+
 user1.journeys.push(journey1);
 user1.journeys.push(journey2);
+user2.journeys.push(journey3);
+user3.journeys.push(journey4);
 
 
 // var country2 = new Country({

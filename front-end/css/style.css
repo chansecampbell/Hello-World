@@ -19,5 +19,6 @@ a {
 }
 
 #profile-picture {
+  max-width: 300px;
   border-radius: 100%;
 }

@@ -3,9 +3,9 @@
   <ul class="media-list">
     <li class="media" ng-repeat="journey in journeys.all">
       <div class="media-left">
-        <!-- <a ui-sref="user({ id: user._id })"> -->
+        <a ui-sref="user({ id: journey.users[0]._id })">
         <img ng-src="{{ journey.users[0].picture }}" class="media-object">
-       <!--  </a> -->
+        </a>
       </div>
       <div class="media-body">
         <h4 class="media-heading">{{ journey.users[0].name }} went to {{ journey.country.name }}</h4>
@@ -14,4 +14,6 @@
     </li>
   </ul>
   </div>
+
+
 
