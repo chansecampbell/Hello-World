@@ -11,20 +11,18 @@ function usersIndex(req, res) {
 
 function usersShow(req, res){
   var id = req.params.id;
+
   User.findById({ _id: id })
     .populate({
       path: "journeys",
-      populate: { path: 'country' } 
+      populate: { path: "country"}
     })
     .exec(function(err, user){
+    console.log(user.journeys);  
     if (err) return res.status(404).json({message: 'Something went wrong.'});
     res.status(200).json({ user: user });
   });
 }
-
-
-
-
 
 function usersUpdate(req, res){
   var id = req.body.user;

@@ -10,6 +10,8 @@ function journeysIndex(req, res) {
   });
 }
 
+
+
 function journeysShow(req, res){
   var id = req.params.id;
   Journey.findById({ _id: id })

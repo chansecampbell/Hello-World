@@ -7,7 +7,7 @@ function CountriesController(Country, Journey, $state) {
   var self            = this;
   self.all            = [];
   self.getCountries   = getCountries;
-  self.journeys       = [];
+  // self.journeys       = [];
   self.getJourneys    = getJourneys;
 
 
@@ -22,16 +22,20 @@ function CountriesController(Country, Journey, $state) {
 
   function getJourneys() {
     Journey.query(function(data){
-      self.journeys = data.journeys[0].country.countryCode;
-      // console.log(self.journeys);
-      self.colour = '#33ccff';
+      self.journeys = data.journeys;
+      // self.journeys = data.journeys[1].country.countryCode;
 
+      console.log(self.journeys);
+
+    });
+
+
+      self.colour = '#33ccff';
 
       self.countries = {};
 
-      self.countries[self.journeys] = self.colour;
+      self.countries["UK"] = self.colour;
 
-      console.log(self.countries);
 
       self.map = 
       $('#world-map').vectorMap({
@@ -45,7 +49,6 @@ function CountriesController(Country, Journey, $state) {
 
 
        });
-      });
 
 
   }
@@ -70,19 +73,20 @@ function CountriesController(Country, Journey, $state) {
   //   US:'#33ccff'
   // }
 
-  self.map = 
-  $('#world-map').vectorMap({
-    map: 'world_mill_en'
-    // backgroundColor: '#f5f5f5',
-   // series: {
-   //   regions: [{
-   //     values: self.countries
-   //   }]
-   // }
+  // self.map = 
+  // $('#world-map').vectorMap({
+  //   map: 'world_mill_en'
+  //   // backgroundColor: '#f5f5f5',
+  //  // series: {
+  //  //   regions: [{
+  //  //     values: self.countries
+  //  //   }]
+  //  // }
 
 
-   });
+  //  });
 
+self.getJourneys();
 
 }
 

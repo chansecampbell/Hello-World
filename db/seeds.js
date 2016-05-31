@@ -19,6 +19,17 @@ var Journey = require("../models/journey");
     console.log("country added! ", country);
   });
 
+  var country2 = new Country({
+    name: "Belgium",
+    countryCode: "BE",
+    picture: "...."
+  })
+
+  country2.save(function(err, country) {
+    if (err) return console.log(err);
+    console.log("country added! ", country);
+  });
+
 
   var user1 = new User({
       name: "John Doe",
@@ -42,9 +53,22 @@ var Journey = require("../models/journey");
       console.log("Journey added! ", journey);
     });
 
+    var journey2 = new Journey({
+        name: "My second trip",
+        description: "Sick trip",
+        country: country2
+      })
+
+      journey2.save(function(err, journey) {
+        if (err) return console.log(err);
+        console.log("Journey added! ", journey);
+      });
+
 
 
 journey1.users.push(user1);
+journey2.users.push(user1);
+
 
 user1.save(function(err, user) {
   if (err) return console.log(err);
@@ -52,6 +76,7 @@ user1.save(function(err, user) {
 });
 
 user1.journeys.push(journey1);
+user1.journeys.push(journey2);
 
 
 // var country2 = new Country({

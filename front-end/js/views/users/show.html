@@ -6,7 +6,14 @@
         <h3>{{ users.user.name | uppercase }}</h3>
         <p><strong>Email:</strong> {{ users.user.email }}</p>
         <p><strong>Trips:</strong> {{ users.user.journeys[0].name }}</p>
-        <p><strong>Countries:</strong> {{ users.user.journeys[0].name }}</p>
+        <p><strong>Countries:</strong> {{ users.user.journeys[0] }}</p>
+
+ <!--          <div ng-controller="JourneysController as journeys">  
+        <li class="media" ng-repeat="journey in journeys.all">
+        <p><strong>Where I went:</strong> {{ journey.country.name }}, {{ journey.country.countryCode }}</p>
+        </li>
+        </div> -->
+        
         <form id="edit-user" ng-submit="users.updateUser(users.user)">
           <input type="text" name='edit-name' id="edit-name" ng-model="users.user.name">
           <input type="submit" value='Update' id="submit">
