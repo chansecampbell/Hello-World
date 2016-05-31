@@ -18,12 +18,20 @@ angular
   self.login         = login;
   self.logout        = logout;
   self.checkLoggedIn = checkLoggedIn;
+  self.checkToSee    = checkToSee;
 
   function getUsers() {
     User.query(function(data){
       self.all = data.users;
     });
   }
+
+  function checkToSee(){
+    self.currentUser = CurrentUser.getUser();
+      console.log(self.currentUser.name);
+    
+    }
+
 
   // function showUser(user){
   //   User.get({id: user._id}, function(user){

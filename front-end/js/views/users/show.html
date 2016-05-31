@@ -5,7 +5,7 @@
       <div class="caption">
         <h3>{{ users.user.name | uppercase }}</h3>
         <p><strong>Email:</strong> {{ users.user.email }}</p>
-
+        <button ng-click="users.checkToSee()"></button>
           <div ng-controller="JourneysController as journeys">  
         <li class="media" ng-repeat="journey in journeys.all">
   
