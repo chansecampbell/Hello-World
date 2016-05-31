@@ -29,7 +29,6 @@ angular
   function checkToSee(){
     self.currentUser = CurrentUser.getUser();
       console.log(self.currentUser.name);
-    
     }
 
 

@@ -1,27 +1,38 @@
 <section>
-  <div class="row">
-    <div class="col-sm-6 col-md-4">
-      <img ng-src="{{ users.user.picture }}">
-      <div class="caption">
-        <h3>{{ users.user.name | uppercase }}</h3>
-        <p><strong>Email:</strong> {{ users.user.email }}</p>
-        <button ng-click="users.checkToSee()"></button>
-          <div ng-controller="JourneysController as journeys">  
-        <li class="media" ng-repeat="journey in journeys.all">
-  
-            <div class="media-body">
-              <h4 class="media-heading">{{ journey.name }}</h4>
-              <p><strong>Where I went:</strong> {{ journey.country.name }}, {{ journey.country.countryCode }}</p>
-              <p><strong>Description:</strong> {{ journey.description }}</p>
-              <p><strong>Who went:</strong> {{ journey.users[0].name }}</p>
-            </div>
-          </li>
-        
-        <form id="edit-user" ng-submit="users.updateUser(users.user)">
-          <input type="text" name='edit-name' id="edit-name" ng-model="users.user.name">
-          <input type="submit" value='Update' id="submit">
-        </form>
+  <div class="container">
+    <div class="row" id="page-wrap">
+      <div class="col-md-8">
+        <div class="main-section">
+          <div class="media">
+            <span class="media-left">
+             <img ng-src="{{ users.user.picture }}">
+           </span>
+           <div class="media-body">
+            <h3 class="media-heading">{{ users.user.name | uppercase }}</h3>
+            <p><strong>Email:</strong> {{ users.user.email }}</p>
+            <form id="edit-user" ng-submit="users.updateUser(users.user)">
+              <input type="text" name='edit-name' id="edit-name" ng-model="users.user.name">
+              <input type="submit" value='Update' id="submit">
+            </form>
+            <button ng-click="users.checkToSee()"></button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
+
+<div ng-controller="JourneysController as journeys">  
+  <div class="media" ng-repeat="journey in journeys.all">
+    
+    <div class="media-body">
+      <h4 class="media-heading">{{ journey.name }}</h4>
+      <p><strong>Where I went:</strong> {{ journey.country.name }}, {{ journey.country.countryCode }}</p>
+      <p><strong>Description:</strong> {{ journey.description }}</p>
+      <p><strong>Who went:</strong> {{ journey.users[0].name }}</p>
+    </div>
+  </div>
+  
+  
+</div>
 </section>
