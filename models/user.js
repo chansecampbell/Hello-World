@@ -12,9 +12,8 @@ var userSchema = mongoose.Schema({
     age: { type: Date },
     gender: { type: String },
     nationality: { type: String },
-    journeys: [{type: mongoose.Schema.ObjectId, ref: 'Journey'}],
-    countries: [{type: mongoose.Schema.ObjectId, ref: 'Country'}]
-});
+    journeys: [{type: mongoose.Schema.ObjectId, ref: 'Journey'}]
+  });
 
 userSchema.methods.validatePassword = function(password){
   return bcrypt.compareSync(password, this.passwordHash, null);

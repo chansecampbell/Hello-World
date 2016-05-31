@@ -6,8 +6,8 @@ var journeySchema = mongoose.Schema({
     countries: [{type: mongoose.Schema.ObjectId, ref: 'Country'}],
     start: { type: Date },
     end: { type: Date },
-    description: { type: Text },
-    pictures: { type: String },
+    description: { type: String },
+    pictures: [{ type: String }],
     users: [{type: mongoose.Schema.ObjectId, ref: 'User'}]
 });
 
