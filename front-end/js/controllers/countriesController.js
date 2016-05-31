@@ -2,10 +2,13 @@ angular
   .module('logging')
   .controller('CountriesController', CountriesController);
 
-CountriesController.$inject = ['Country', '$state'];
-function CountriesController(Country, $state) {
+CountriesController.$inject = ['Country', 'Journey', '$state'];
+function CountriesController(Country, Journey, $state) {
   var self            = this;
+  self.all            = [];
   self.getCountries   = getCountries;
+  self.journeys       = [];
+  self.getJourneys    = getJourneys;
 
 
   function getCountries() {
@@ -14,6 +17,13 @@ function CountriesController(Country, $state) {
       for (var i = 0; i < self.all.length; i++) {
         console.log(self.all[i].countryCode);
       }
+    });
+  }
+
+  function getJourneys() {
+    Journey.query(function(data){
+      self.journeys = data.journeys;
+      console.log(self.journeys[0].country.countryCode);
     });
   }
 
@@ -49,17 +59,6 @@ function CountriesController(Country, $state) {
 
    });
 
-  // https://restcountries.eu/rest/v1/alpha/bd
-  
-  // self.listCountries = function(){
-
-  //   console.log("hello");
-  //   var countryCode = "BD";
-
-  //   $.getJSON("https://restcountries.eu/rest/v1/alpha/bd"), function (json) {
-  //       console.log(json);
-  //   }
-  // }
 
 }
 
