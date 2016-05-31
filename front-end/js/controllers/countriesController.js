@@ -2,12 +2,16 @@ angular
   .module('logging')
   .controller('CountriesController', CountriesController);
 
-function CountriesController() {
-  var self = this;
+CountriesController.$inject = ['Country', '$state'];
+function CountriesController(Country, $state) {
+  var self            = this;
+  self.getCountries   = getCountries;
+
 
   function getCountries() {
     Country.query(function(data){
-      self.all = data.users;
+      self.all = data.countries;
+      console.log(self.all);
     });
   }
 
