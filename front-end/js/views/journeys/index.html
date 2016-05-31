@@ -6,10 +6,7 @@
       </a>
     </div> -->
     <div class="media-body">
-      <h4 class="media-heading">{{ journey.name }}</h4>
-      <p><strong>Where I went:</strong> {{ journey.country.name }}, {{ journey.country.countryCode }}</p>
+      <h4 class="media-heading">{{ journey.users[0].name }} went to {{ journey.country.name }}</h4>
       <p><strong>Description:</strong> {{ journey.description }}</p>
-      <p><strong>Who went:</strong> {{ journey.users[0].name }}</p>
     </div>
   </li>
-</ul>

@@ -1,22 +1,9 @@
  <div ng-controller="CountriesController as countries">
  <div ng-modal="countries.map" id="world-map"></div>
+ <ul ng-repeat="journey in countries.journeys">
+   <li><strong>Journeys:</strong> {{ journey.country.countryCode }} </li>
+   </ul>
 <!--  <button ng-click="countries.getCountries()">Click here for a list</button>
  --><!--  <button ng-click="countries.getJourneys()">Click here for all journeys</button>
  --> 
  </div>
-<!--   <div ng-app="ngMap">
-   <ng-map center="[55.3781, 3.4360]" zoom="2">
-     <fusion-tables-layer
-    query= "{
-      select: 'geometry',
-      from: '1N2LBk4JHwWpOY4d9fobIn27lfnZ5MDy-NoqqRpk'}",
-    styles="[{
-      where: 'ISO_2DIGIT IN ('US', 'GB', 'DE')',
-      polygonOptions: {
-        fillColor: 'rgb(254, 66, 235)',
-        fillOpacity: 0.3
-      }
-    }]">
-  </fusion-tables-layer>
-   </ng-map>
- </div> 

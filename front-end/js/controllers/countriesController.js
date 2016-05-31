@@ -2,8 +2,8 @@ angular
   .module('logging')
   .controller('CountriesController', CountriesController);
 
-CountriesController.$inject = ['Country', 'Journey', '$state'];
-function CountriesController(Country, Journey, $state) {
+CountriesController.$inject = ['Country', 'Journey', '$state', 'CurrentUser'];
+function CountriesController(Country, Journey, $state, CurrentUser) {
   var self            = this;
   self.all            = [];
   self.getCountries   = getCountries;
@@ -34,7 +34,7 @@ function CountriesController(Country, Journey, $state) {
 
       self.countries = {};
 
-      self.countries["UK"] = self.colour;
+      self.countries["GB"] = self.colour;
 
 
       self.map = 

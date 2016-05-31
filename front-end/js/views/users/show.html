@@ -5,14 +5,17 @@
       <div class="caption">
         <h3>{{ users.user.name | uppercase }}</h3>
         <p><strong>Email:</strong> {{ users.user.email }}</p>
-        <p><strong>Trips:</strong> {{ users.user.journeys[0].name }}</p>
-        <p><strong>Countries:</strong> {{ users.user.journeys[0] }}</p>
 
- <!--          <div ng-controller="JourneysController as journeys">  
+          <div ng-controller="JourneysController as journeys">  
         <li class="media" ng-repeat="journey in journeys.all">
-        <p><strong>Where I went:</strong> {{ journey.country.name }}, {{ journey.country.countryCode }}</p>
-        </li>
-        </div> -->
+  
+            <div class="media-body">
+              <h4 class="media-heading">{{ journey.name }}</h4>
+              <p><strong>Where I went:</strong> {{ journey.country.name }}, {{ journey.country.countryCode }}</p>
+              <p><strong>Description:</strong> {{ journey.description }}</p>
+              <p><strong>Who went:</strong> {{ journey.users[0].name }}</p>
+            </div>
+          </li>
         
         <form id="edit-user" ng-submit="users.updateUser(users.user)">
           <input type="text" name='edit-name' id="edit-name" ng-model="users.user.name">
