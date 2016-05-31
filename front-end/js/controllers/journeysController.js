@@ -5,6 +5,9 @@ angular
 JourneysController.$inject = ['Journey', '$state'];
 function JourneysController(Journey, $state) {
   var self               = this;
+  self.all               = [];
+  self.user              = null;
+  self.error             = null;
   self.getJourneys       = getJourneys;
   self.updateJourney     = updateJourney;
 

@@ -4,7 +4,8 @@ var databaseURL = 'mongodb://localhost:27017/hello-world-p4';
 mongoose.connect(databaseURL);
 
 var Country = require("../models/country"); 
-// var User    = require("./models/user");
+var User    = require("../models/user");
+var Journey = require("../models/journey");
 
 var country1 = new Country({
   name: "Bangladesh",
@@ -16,6 +17,36 @@ country1.save(function(err, country) {
  if (err) return console.log(err);
  console.log("Country added! ", country);
 })
+
+var journey1 = new Journey({
+  name: "My first trip",
+  countries: [country1],
+      description: "Sick trip"
+})
+
+journey1.save(function(err, journey) {
+ if (err) return console.log(err);
+ console.log("Journey added! ", journey);
+})
+
+var user1 = new User({
+  name: "John Doe",
+  picture: "http://www.fillmurray.com/g/300/300",
+  email: "john@john.com",
+  _password: "password",
+  age: "21",
+  gender: "Male",
+  nationality: "American",
+  journeys: [journey1]
+})
+
+user1.save(function(err, user) {
+ if (err) return console.log(err);
+ console.log("User added! ", user);
+})
+
+// user1.journeys.push(journey1);
+
 
 var country2 = new Country({
   name: "Belgium",
