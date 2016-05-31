@@ -21,7 +21,8 @@ router.route('/users/:id')
   .delete(usersController.usersDelete);
 
 router.route('/journeys')
-  .get(journeysController.journeysIndex);
+  .get(journeysController.journeysIndex)
+  .post(journeysController.journeysCreate);
 
 router.route('/journeys/:id')
   .get(journeysController.journeysShow)

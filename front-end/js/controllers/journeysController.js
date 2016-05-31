@@ -2,14 +2,15 @@ angular
   .module('logging')
   .controller('JourneysController', JourneysController);
 
-JourneysController.$inject = ['Journey', '$state'];
-function JourneysController(Journey, $state) {
+JourneysController.$inject = ['Journey', '$state', 'CurrentUser'];
+function JourneysController(Journey, $state, CurrentUser) {
   var self               = this;
   self.all               = [];
   self.journey           = null;
   self.error             = null;
   self.getJourneys       = getJourneys;
   self.updateJourney     = updateJourney;
+  self.journeys = {};
 
 
   function getJourneys() {
@@ -25,8 +26,9 @@ function JourneysController(Journey, $state) {
       });
     } else {
       Journey.save({ journey: self.journey }, function(journey) {
-        self.journeys.push(journey);
+        // self.journeys.push(journey);
         self.journey = {};
+        self.getJourneys();
       });
     }
   }

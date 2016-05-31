@@ -13,6 +13,15 @@
       </div>
     </li>
   </ul>
+
+  <form id="edit-user" ng-submit="journeys.updateJourney()">
+    <input type="text" name='name' id="journey-name" ng-model="journeys.journey.name" placeholder="Where did you go?">
+    <input type="text" name='description' id="journey-description" ng-model="journeys.journey.description" placeholder="Description">
+<!--     <div ng-model="journeys.journey.user[0]" value="Chanse Campbell"></div>
+ --><!--     <input type="text" name='user' id="journey-user" ng-model="journeys.journey.user" value="journeys.user[users.currentUser]"> -->
+    <input type="submit" value='Add Journey' id="submit">
+  </form>
+
   </div>
 
 
