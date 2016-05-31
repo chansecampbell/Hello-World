@@ -1,7 +1,9 @@
 var User   = require('../models/user');
 
 function usersIndex(req, res) {
-  User.find(function(err, users){
+  User.find()
+    .populate("journeys")
+    .exec(function(err, users){
     if (err) return res.status(404).json({message: 'Something went wrong.'});
     res.status(200).json({ users: users });
   });
@@ -10,16 +12,19 @@ function usersIndex(req, res) {
 function usersShow(req, res){
   var id = req.params.id;
   User.findById({ _id: id })
-    .populate("journeys")
     .populate({
       path: "journeys",
-      populate: { path: 'countries' } 
+      populate: { path: 'country' } 
     })
     .exec(function(err, user){
     if (err) return res.status(404).json({message: 'Something went wrong.'});
     res.status(200).json({ user: user });
   });
 }
+
+
+
+
 
 function usersUpdate(req, res){
   var id = req.body.user;

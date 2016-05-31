@@ -7,145 +7,151 @@ var Country = require("../models/country");
 var User    = require("../models/user");
 var Journey = require("../models/journey");
 
-var country1 = new Country({
-  name: "Bangladesh",
-  countryCode: "BD",
-  picture: "...."
-})
 
-country1.save(function(err, country) {
- if (err) return console.log(err);
- console.log("Country added! ", country);
-})
+  var country1 = new Country({
+    name: "Bangladesh",
+    countryCode: "BD",
+    picture: "...."
+  })
 
-var journey1 = new Journey({
-  name: "My first trip",
-  countries: [country1],
-      description: "Sick trip"
-})
+  country1.save(function(err, country) {
+    if (err) return console.log(err);
+    console.log("country added! ", country);
+  });
 
-journey1.save(function(err, journey) {
- if (err) return console.log(err);
- console.log("Journey added! ", journey);
-})
 
-var user1 = new User({
-  name: "John Doe",
-  picture: "http://www.fillmurray.com/g/300/300",
-  email: "john@john.com",
-  _password: "password",
-  age: "21",
-  gender: "Male",
-  nationality: "American",
-  journeys: [journey1]
-})
+  var user1 = new User({
+      name: "John Doe",
+      picture: "http://www.fillmurray.com/g/300/300",
+      email: "john@john.com",
+      _password: "password",
+      age: "21",
+      gender: "Male",
+      nationality: "American",
+    })
+
+
+  var journey1 = new Journey({
+      name: "My first trip",
+      description: "Sick trip",
+      country: country1
+    })
+
+    journey1.save(function(err, journey) {
+      if (err) return console.log(err);
+      console.log("Journey added! ", journey);
+    });
+
+
+
+journey1.users.push(user1);
 
 user1.save(function(err, user) {
- if (err) return console.log(err);
- console.log("User added! ", user);
-})
+  if (err) return console.log(err);
+  console.log("User added! ", user);
+});
 
-// user1.journeys.push(journey1);
+user1.journeys.push(journey1);
 
 
-var country2 = new Country({
-  name: "Belgium",
-  countryCode: "BE",
-  picture: "...."
-})
+// var country2 = new Country({
+//   name: "Belgium",
+//   countryCode: "BE",
+//   picture: "...."
+// })
 
-country2.save(function(err, country) {
- if (err) return console.log(err);
- console.log("Country added! ", country);
-})
+// country2.save(function(err, country) {
+//  if (err) return console.log(err);
+//  console.log("Country added! ", country);
+// })
 
-var country3 = new Country({
-  name: "Burkina Faso",
-  countryCode: "BF",
-  picture: "...."
-})
+// var country3 = new Country({
+//   name: "Burkina Faso",
+//   countryCode: "BF",
+//   picture: "...."
+// })
 
-country3.save(function(err, country) {
- if (err) return console.log(err);
- console.log("Country added! ", country);
-})
+// country3.save(function(err, country) {
+//  if (err) return console.log(err);
+//  console.log("Country added! ", country);
+// })
 
-var country4 = new Country({
-  name: "Bulgaria",
-  countryCode: "BG",
-  picture: "...."
-})
+// var country4 = new Country({
+//   name: "Bulgaria",
+//   countryCode: "BG",
+//   picture: "...."
+// })
 
-country4.save(function(err, country) {
- if (err) return console.log(err);
- console.log("Country added! ", country);
-})
+// country4.save(function(err, country) {
+//  if (err) return console.log(err);
+//  console.log("Country added! ", country);
+// })
 
-var country5 = new Country({
-  name: "Bosnia and Herz",
-  countryCode: "BA",
-  picture: "...."
-})
+// var country5 = new Country({
+//   name: "Bosnia and Herz",
+//   countryCode: "BA",
+//   picture: "...."
+// })
 
-country5.save(function(err, country) {
- if (err) return console.log(err);
- console.log("Country added! ", country);
-})
+// country5.save(function(err, country) {
+//  if (err) return console.log(err);
+//  console.log("Country added! ", country);
+// })
 
-var country6 = new Country({
-  name: "Brunei",
-  countryCode: "BN",
-  picture: "...."
-})
+// var country6 = new Country({
+//   name: "Brunei",
+//   countryCode: "BN",
+//   picture: "...."
+// })
 
-country6.save(function(err, country) {
- if (err) return console.log(err);
- console.log("Country added! ", country);
-})
+// country6.save(function(err, country) {
+//  if (err) return console.log(err);
+//  console.log("Country added! ", country);
+// })
 
-var country7 = new Country({
-  name: "Bolivia",
-  countryCode: "BO",
-  picture: "...."
-})
+// var country7 = new Country({
+//   name: "Bolivia",
+//   countryCode: "BO",
+//   picture: "...."
+// })
 
-country7.save(function(err, country) {
- if (err) return console.log(err);
- console.log("Country added! ", country);
-})
+// country7.save(function(err, country) {
+//  if (err) return console.log(err);
+//  console.log("Country added! ", country);
+// })
 
-var country8 = new Country({
-  name: "Japan",
-  countryCode: "JP",
-  picture: "...."
-})
+// var country8 = new Country({
+//   name: "Japan",
+//   countryCode: "JP",
+//   picture: "...."
+// })
 
-country8.save(function(err, country) {
- if (err) return console.log(err);
- console.log("Country added! ", country);
-})
+// country8.save(function(err, country) {
+//  if (err) return console.log(err);
+//  console.log("Country added! ", country);
+// })
 
-var country9 = new Country({
-  name: "Burundi",
-  countryCode: "BI",
-  picture: "...."
-})
+// var country9 = new Country({
+//   name: "Burundi",
+//   countryCode: "BI",
+//   picture: "...."
+// })
 
-country9.save(function(err, country) {
- if (err) return console.log(err);
- console.log("Country added! ", country);
-})
+// country9.save(function(err, country) {
+//  if (err) return console.log(err);
+//  console.log("Country added! ", country);
+// })
 
-var country10 = new Country({
-  name: "Benin",
-  countryCode: "BJ",
-  picture: "...."
-})
+// var country10 = new Country({
+//   name: "Benin",
+//   countryCode: "BJ",
+//   picture: "...."
+// })
 
-country10.save(function(err, country) {
- if (err) return console.log(err);
- console.log("Country added! ", country);
-})
+// country10.save(function(err, country) {
+//  if (err) return console.log(err);
+//  console.log("Country added! ", country);
+// })
 
 // 1 BD  Bangladesh
 // 2 BE  Belgium
