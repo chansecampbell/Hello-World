@@ -11,7 +11,9 @@ function CountriesController(Country, $state) {
   function getCountries() {
     Country.query(function(data){
       self.all = data.countries;
-      console.log(self.all[0].name);
+      for (var i = 0; i < self.all.length; i++) {
+        console.log(self.all[i].countryCode);
+      }
     });
   }
 
