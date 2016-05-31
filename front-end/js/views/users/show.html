@@ -5,7 +5,7 @@
         <div class="main-section">
           <div class="media">
             <span class="media-left">
-             <img ng-src="{{ users.user.picture }}">
+            <img ng-src="{{ users.user.picture }}" id="profile-picture">
            </span>
            <div class="media-body">
             <h3 class="media-heading">{{ users.user.name | uppercase }}</h3>
@@ -24,7 +24,7 @@
 
 <div ng-controller="JourneysController as journeys">  
   <div class="media" ng-repeat="journey in journeys.all">
-    
+
     <div class="media-body">
       <h4 class="media-heading">{{ journey.name }}</h4>
       <p><strong>Where I went:</strong> {{ journey.country.name }}, {{ journey.country.countryCode }}</p>
@@ -32,7 +32,7 @@
       <p><strong>Who went:</strong> {{ journey.users[0].name }}</p>
     </div>
   </div>
-  
-  
+
+
 </div>
 </section>

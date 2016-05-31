@@ -1,12 +1,17 @@
+ <h1>What's going on in the world</h1>
   <div ng-controller="JourneysController as journeys">  
-<li class="media" ng-repeat="journey in journeys.all">
- <!--    <div class="media-left">
-      <a ui-sref="journey({ id: journey._id })">
-        <img class="media-object" ng-src="{{ journey.picture }}">
-      </a>
-    </div> -->
-    <div class="media-body">
-      <h4 class="media-heading">{{ journey.users[0].name }} went to {{ journey.country.name }}</h4>
-      <p><strong>Description:</strong> {{ journey.description }}</p>
-    </div>
-  </li>
+  <ul class="media-list">
+    <li class="media" ng-repeat="journey in journeys.all">
+      <div class="media-left">
+        <!-- <a ui-sref="user({ id: user._id })"> -->
+        <img ng-src="{{ journey.users[0].picture }}" class="media-object">
+       <!--  </a> -->
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">{{ journey.users[0].name }} went to {{ journey.country.name }}</h4>
+        <p><strong>Description:</strong> {{ journey.description }}</p>
+      </div>
+    </li>
+  </ul>
+  </div>
+
