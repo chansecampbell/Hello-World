@@ -85,7 +85,7 @@ var Journey = require("../models/journey");
 
 
   var journey1 = new Journey({
-      name: "My first trip",
+      name: "Bangladesh",
       description: "Sick trip",
       country: country1
     })
@@ -96,7 +96,7 @@ var Journey = require("../models/journey");
     });
 
     var journey2 = new Journey({
-        name: "My second trip",
+        name: "Weekend in Belgium",
         description: "Sick trip",
         country: country2
       })
@@ -107,7 +107,7 @@ var Journey = require("../models/journey");
       });
 
       var journey3 = new Journey({
-          name: "Blah blah blah",
+          name: "Japan",
           description: "It wasn't that good.",
           country: country3
         })
@@ -118,7 +118,7 @@ var Journey = require("../models/journey");
         });
 
         var journey4 = new Journey({
-            name: "Blah bleh bleh",
+            name: "Quick tour of the UK",
             description: "Amazing",
             country: country4
           })

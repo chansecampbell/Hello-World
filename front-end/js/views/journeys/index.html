@@ -10,6 +10,8 @@
       <div class="media-body">
         <h4 class="media-heading">{{ journey.users[0].name }} went to {{ journey.country.name }}</h4>
         <p><strong>Description:</strong> {{ journey.description }}</p>
+        <p><strong>From:</strong> {{ journey.start }}</p>
+        <p><strong>To:</strong> {{ journey.end }}</p>
       </div>
     </li>
   </ul>
@@ -17,6 +19,8 @@
   <form id="edit-user" ng-submit="journeys.updateJourney()">
     <input type="text" name='name' id="journey-name" ng-model="journeys.journey.name" placeholder="Where did you go?">
     <input type="text" name='description' id="journey-description" ng-model="journeys.journey.description" placeholder="Description">
+    <input type="date" name='start' id="journey-description" ng-model="journeys.journey.start" placeholder="Start of trip">
+    <input type="date" name='end' id="journey-description" ng-model="journeys.journey.end" placeholder="End of trip">
 <!--     <div ng-model="journeys.journey.user[0]" value="Chanse Campbell"></div>
  --><!--     <input type="text" name='user' id="journey-user" ng-model="journeys.journey.user" value="journeys.user[users.currentUser]"> -->
     <input type="submit" value='Add Journey' id="submit">
