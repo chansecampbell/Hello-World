@@ -19,8 +19,6 @@ angular
   self.logout        = logout;
   self.checkLoggedIn = checkLoggedIn;
   self.checkToSee    = checkToSee;
-  self.updateJourney     = updateJourney;
-
 
   function getUsers() {
     User.query(function(data){
@@ -32,29 +30,6 @@ angular
     self.currentUser = CurrentUser.getUser();
       console.log(self.currentUser.name);
     }
-
-  // function showUser(user){
-  //   User.get({id: user._id}, function(user){
-  //     console.log('user: ', user)
-  //     self.user = user;
-  //   });
-  // }
-
-  function updateJourney() {
-    var currentUser = CurrentUser.getUser();
-    if (self.journey._id) {
-      Journey.update({ id: self.journey._id }, { journey: self.journey, user: currentUser }, function(response){
-        console.log(response);
-        self.journey = {};
-      });
-    } else {
-      Journey.save({ journey: self.journey, user: currentUser }, function(journey) {
-        // self.journeys.push(journey);
-        self.journey = {};
-        self.getJourneys();
-      });
-    }
-  }
 
   function updateUser() {
       User.update({ id: self.user._id }, { user: self.user }, function(data){

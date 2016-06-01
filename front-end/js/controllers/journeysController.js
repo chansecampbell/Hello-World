@@ -35,6 +35,7 @@ function JourneysController(Journey, $state, CurrentUser, User) {
         // self.journeys.push(journey);
         self.journey = {};
         self.getJourneys();
+        $state.go("journeys");
       });
     }
   }
