@@ -37,24 +37,28 @@
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
+<header>
+  <nav class="navbar navbar-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" id="title-header" href="#" ui-sref-active="active" ui-sref="home">Hello World</a>
+      </div>
+    </div>
+  </nav>
+</header>
 
 <body ng-controller="UsersController as users">
-  <header>
-    <nav class="navbar navbar-default">
+ 
+
+  <main ui-view></main>
+
+
+  <footer>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#" ui-sref-active="active" ui-sref="home">Hello World</a>
-        </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li ng-show="users.checkLoggedIn()">
               <a href="#">Welcome, {{ users.currentUser.name }}</a>
@@ -81,12 +85,8 @@
               <a href="#"ui-sref="home" ng-click="users.logout()">Logout</a>
             </li>
           </ul>
-        </div>
-      </div>
+          </div>
     </nav>
-  </header>
-
-  <main ui-view></main>
-
+  </footer>
 </body>
 </html>

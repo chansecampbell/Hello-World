@@ -8,15 +8,6 @@ function CountriesController(Country, Journey, User, $state, CurrentUser) {
   self.users            = [];
   self.countries      = [];
   self.getUsers        = getUsers;
-  // self.getCountries   = getCountries;
-  // self.mapOutCountries = mapOutCountries;
-
-
-  // function getCountries(country) {
-  //   Country.query(function(data){
-  //     self.all = data.countries;
-  //   });
-  // }
 
   function getUsers() {
     self.users       = [];
@@ -49,12 +40,6 @@ function CountriesController(Country, Journey, User, $state, CurrentUser) {
       }
     })
   }
-
-      // for (var i = 0; i < self.users[0].countries.length; i++ ) {
-      //   self.countries.push(self.users[0].countries[i].countryCode);
-      //   console.log(self.countries);
-      //    self.map = 
-            //  }
  
 
   // self.getCountries();
