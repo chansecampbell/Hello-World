@@ -41,7 +41,7 @@
   <nav class="navbar navbar-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" id="title-header" href="#" ui-sref-active="active" ui-sref="home">Hello World</a>
+        <a class="navbar-brand" id="title-header" href="#" ui-sref-active="active" ui-sref="home">Hello World .</a>
       </div>
     </div>
   </nav>
@@ -49,17 +49,14 @@
 
 <body ng-controller="UsersController as users">
  
-
-  <main ui-view></main>
+  <main id="main" ui-view></main>
 
 
   <footer>
     <nav class="navbar navbar-default navbar-fixed-bottom">
       <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav">
             <li ng-show="users.checkLoggedIn()">
               <a href="#">Welcome, {{ users.currentUser.name }}</a>
             </li>
