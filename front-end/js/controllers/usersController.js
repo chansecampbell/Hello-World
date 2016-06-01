@@ -2,8 +2,8 @@ angular
   .module('logging')
   .controller('UsersController', UsersController);
 
-  UsersController.$inject = ['User', 'CurrentUser', '$state', '$auth'];
-  function UsersController(User, CurrentUser, $state, $auth){
+  UsersController.$inject = ['User', 'Journey', 'CurrentUser', '$state', '$auth'];
+  function UsersController(User, Journey, CurrentUser, $state, $auth){
 
   var self = this;
 
@@ -19,6 +19,8 @@ angular
   self.logout        = logout;
   self.checkLoggedIn = checkLoggedIn;
   self.checkToSee    = checkToSee;
+  self.updateJourney     = updateJourney;
+
 
   function getUsers() {
     User.query(function(data){
@@ -37,6 +39,22 @@ angular
   //     self.user = user;
   //   });
   // }
+
+  function updateJourney() {
+    var currentUser = CurrentUser.getUser();
+    if (self.journey._id) {
+      Journey.update({ id: self.journey._id }, { journey: self.journey, user: currentUser }, function(response){
+        console.log(response);
+        self.journey = {};
+      });
+    } else {
+      Journey.save({ journey: self.journey, user: currentUser }, function(journey) {
+        // self.journeys.push(journey);
+        self.journey = {};
+        self.getJourneys();
+      });
+    }
+  }
 
   function updateUser() {
       User.update({ id: self.user._id }, { user: self.user }, function(data){
