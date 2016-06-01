@@ -2,8 +2,8 @@ angular
   .module('logging')
   .controller('UsersController', UsersController);
 
-  UsersController.$inject = ['User', 'Journey', 'CurrentUser', '$state', '$auth'];
-  function UsersController(User, Journey, CurrentUser, $state, $auth){
+  UsersController.$inject = ['User', 'Journey', 'CurrentUser', '$state', '$auth', '$scope', '$http', 'API'];
+  function UsersController(User, Journey, CurrentUser, $state, $auth, $scope, $http, API){
 
   var self = this;
 
@@ -19,12 +19,24 @@ angular
   self.logout        = logout;
   self.checkLoggedIn = checkLoggedIn;
   self.checkToSee    = checkToSee;
+  self.getCountries  = getCountries;
 
   function getUsers() {
     User.query(function(data){
       self.all = data.users;
     });
   }
+
+  function getCountries(query) {
+      return $http.get(API + '/countries', {query: query})
+        .then(function(response){
+          // console.log(response.data.countries);
+          var countries = response.data.countries;
+          return countries.map(function(country) {
+            console.log(country.name);
+          });
+        });
+    };
 
   function checkToSee(){
     self.currentUser = CurrentUser.getUser();

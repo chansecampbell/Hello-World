@@ -18,14 +18,14 @@
               <input type="text" name='edit-nationality' id="edit-nationality" class="form-control" ng-model="users.user.nationality" placeholder="What is your nationality?">
               <input type="submit" value='Update' id="submit" ng-click="showedit=false" class="btn">
             </form>
-
+            <button ng-click="users.getCountries()">Click here for a list</button>
             <button class="btn" ng-click="showjourney = !showjourney">Add Journey</button> 
             <div ng-controller="JourneysController as journeys"> 
             <form id="edit-user" class="form-group" ng-submit="journeys.updateJourney()" ng-show="showjourney">
             <div class="row">
               <div class="col-md-12">
               <input type="text" name='name' id="journey-name" class="form-control" ng-model="journeys.journey.name" placeholder="Where did you go?">
-            
+
    <!--       <div ng-controller="CountriesController as countries"> 
               <input type="text" data-ng-model="journeys.journey.name" placeholder="Where did you go?" uib-typeahead="country for country in countries.getCountry($viewValue)" typeahead-loading="Loading Countries.." typeahead-no-results="noResults" class="form-control">
               </div>

@@ -2,8 +2,8 @@ angular
 .module('logging')
 .controller('CountriesController', CountriesController);
 
-CountriesController.$inject = ['Country', 'Journey', 'User', '$state', 'CurrentUser', '$scope', '$http'];
-function CountriesController(Country, Journey, User, $state, CurrentUser, $scope, $http) {
+CountriesController.$inject = ['Country', 'Journey', 'User', '$state', 'CurrentUser'];
+function CountriesController(Country, Journey, User, $state, CurrentUser) {
   var self            = this;
   self.all            = [];
   self.getCountries   = getCountries;
