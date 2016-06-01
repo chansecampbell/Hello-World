@@ -20,9 +20,12 @@
             <div ng-controller="JourneysController as journeys">  
             <form id="edit-user" ng-submit="journeys.updateJourney()">
               <input type="text" name='name' id="journey-name" ng-model="journeys.journey.name" placeholder="Where did you go?">
+              <input type="date" name='start' id="journey-start" ng-model="journeys.journey.start">
+                 <input type="date" name='end' id="journey-end" ng-model="journeys.journey.end">
               <input type="text" name='description' id="journey-description" ng-model="journeys.journey.description" placeholder="Description">
-              <input type="date" name='start' id="journey-description" ng-model="journeys.journey.start" placeholder="Start of trip">
-              <input type="date" name='end' id="journey-description" ng-model="journeys.journey.end" placeholder="End of trip">
+            <input type="text" name='pictures' id="journey-pictures" ng-model="journeys.journey.pictures" placeholder="Add a picture">
+            <input type="text" name='pictures' id="journey-pictures" ng-model="journeys.journey.pictures" placeholder="Add a picture">
+            <input type="text" name='pictures' id="journey-pictures" ng-model="journeys.journey.pictures" placeholder="Add a picture">
               <input type="submit" value='Add Journey' id="submit">
             </form>
             </div>

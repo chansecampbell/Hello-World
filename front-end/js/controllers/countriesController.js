@@ -46,7 +46,7 @@ function CountriesController(Country, Journey, User, $state, CurrentUser) {
     });
 
 
-    self.colour = '#33ccff';
+    self.colour = '#3498db';
 
     self.countries["GB"] = self.colour;
 
@@ -54,13 +54,22 @@ function CountriesController(Country, Journey, User, $state, CurrentUser) {
     self.map = 
     $('#world-map').vectorMap({
       map: 'world_mill_en',
-        // backgroundColor: '#f5f5f5',
+      zoomButtons : false,
+        backgroundColor: '#f5f5f5',
+          regionStyle: {
+                 initial: {
+
+                   fill: '#757575'
+                 },
+                 hover: {
+                     fill: "#d3d3d3"
+                   }
+        },
         series: {
          regions: [{
            values: self.countries
          }]
-       }
-
+        }
 
      });
 

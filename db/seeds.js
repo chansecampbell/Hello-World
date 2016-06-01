@@ -86,7 +86,9 @@ var Journey = require("../models/journey");
 
   var journey1 = new Journey({
       name: "Bangladesh",
-      description: "Sick trip",
+      description: "Went away for a couple of weeks and stopped off here whilst backpacking.",
+      start: 11/01/2001,
+      end: 21/02/2001,
       country: country1
     })
 
@@ -97,7 +99,9 @@ var Journey = require("../models/journey");
 
     var journey2 = new Journey({
         name: "Weekend in Belgium",
-        description: "Sick trip",
+        description: "This was a crazy weekend away a few years ago.",
+        start: 11/01/2010,
+        end: 15/01/2010,
         country: country2
       })
 
@@ -108,7 +112,9 @@ var Journey = require("../models/journey");
 
       var journey3 = new Journey({
           name: "Japan",
-          description: "It wasn't that good.",
+          description: "It wasn't that good. I didn't rate Japan.",
+          start: 11/01/2001,
+          end: 20/01/2001,
           country: country3
         })
 
@@ -119,7 +125,9 @@ var Journey = require("../models/journey");
 
         var journey4 = new Journey({
             name: "Quick tour of the UK",
-            description: "Amazing",
+            description: "Amazing country, weird accents.",
+            start: 11/01/2001,
+            end: 20/01/2001,
             country: country4
           })
 
