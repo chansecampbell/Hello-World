@@ -28,7 +28,7 @@ angular
   }
 
   function getCountries(query) {
-      $http.post(API + '/countries/search', {query: query})
+      return $http.post(API + '/countries/search', {query: query})
         .then(function(response){
           var countries = response.data;
           console.log(countries);
@@ -36,9 +36,9 @@ angular
           // for (var i = 0; i < countries.length; i++) {
           //   return countries[i].name;
           // }
-          // return countries.map(function(country) {
-          //   return country[0];
-          // });
+          return countries.map(function(country) {
+            return country.name;
+          });
         });
     };
 
