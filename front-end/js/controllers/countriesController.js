@@ -28,53 +28,35 @@ function CountriesController(Country, Journey, User, $state, CurrentUser) {
   function mapOutCountries() {
     var currentUser = CurrentUser.getUser();
     console.log(currentUser);
+
+     self.colour = '#3498db';
+
+     self.countries["GB"] = self.colour;
+
+
+     self.map = 
+     $('#world-map').vectorMap({
+       map: 'world_mill_en',
+       zoomButtons : false,
+       backgroundColor: '#f5f5f5',
+       regionStyle: {
+        initial: {
+
+          fill: '#757575'
+        },
+        hover: {
+          fill: "#d3d3d3"
+        }
+      },
+      series: {
+        regions: [{
+          values: self.countries
+        }]
+      }
+
+    });
+
   }
-
-
-  // function getJourneys() {
-  //   Journey.query(function(data){
-  //     self.journeys = data.journeys;
-  //     // self.journeys = data.journeys[1].country.countryCode;
-
-
-  //     // for (var i = 0; i < self.journeys.length; i++) {
-  //     //   var item = self.journeys[i];
-  //     //   self.countries.push(item);
-  //     //   console.log(self.countries);
-  //     // }
-
-
-  //   });
-
-  //   }
-
-  self.colour = '#3498db';
-
-  self.countries["GB"] = self.colour;
-
-
-  self.map = 
-  $('#world-map').vectorMap({
-    map: 'world_mill_en',
-    zoomButtons : false,
-    backgroundColor: '#f5f5f5',
-    regionStyle: {
-     initial: {
-
-       fill: '#757575'
-     },
-     hover: {
-       fill: "#d3d3d3"
-     }
-   },
-   series: {
-     regions: [{
-       values: self.countries
-     }]
-   }
-
- });
-
 
 
   // self.countries = {
@@ -97,21 +79,8 @@ function CountriesController(Country, Journey, User, $state, CurrentUser) {
   //   US:'#33ccff'
   // }
 
-  // self.map = 
-  // $('#world-map').vectorMap({
-  //   map: 'world_mill_en'
-  //   // backgroundColor: '#f5f5f5',
-  //  // series: {
-  //  //   regions: [{
-  //  //     values: self.countries
-  //  //   }]
-  //  // }
-
-
-  //  });
-
   self.getCountries();
-  // self.getJourneys();
+  self.mapOutCountries();
 
 }
 

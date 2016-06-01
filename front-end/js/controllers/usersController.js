@@ -28,15 +28,29 @@ angular
   }
 
   function getCountries(query) {
-      return $http.get(API + '/countries', {query: query})
+      $http.get(API + '/countries', {query: query})
         .then(function(response){
-          // console.log(response.data.countries);
           var countries = response.data.countries;
-          return countries.map(function(country) {
-            console.log(country.name);
-          });
+          // console.log(countries);
+          for (var i = 0; i < countries.length; i++) {
+            return countries[i].name;
+          }
+          // return countries.map(function(country) {
+          //   return country[0];
+          // });
         });
     };
+
+    // vm.getGame = function(query) {
+    //     return $http.post(API + '/games', {query: query})
+    //       .then(function(response){
+    //         // console.log(response);
+    //         var games = response.data.games;
+    //         return games.map(function(game) {
+    //           return game.name;
+    //         });
+    //       });
+    //   };
 
   function checkToSee(){
     self.currentUser = CurrentUser.getUser();
