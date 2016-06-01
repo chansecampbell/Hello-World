@@ -8,13 +8,24 @@
             <img ng-src="{{ users.user.picture }}" id="profile-picture">
            </span>
            <div class="media-body">
-            <h3 class="media-heading">{{ users.user.name | uppercase }}</h3>
+            <h2 class="media-heading">{{ users.user.name | uppercase }}</h2>
             <p><strong>Email:</strong> {{ users.user.email }}</p>
-            <form id="edit-user" ng-submit="users.updateUser(users.user)">
+            <h3>Edit User</h3>
+            <form id="edit-user" ng-submit="users.updateUser()">
               <input type="text" name='edit-name' id="edit-name" ng-model="users.user.name">
               <input type="submit" value='Update' id="submit">
             </form>
-            <button ng-click="users.checkToSee()"></button>
+
+            <h3>Add a journey</h3>
+            <div ng-controller="JourneysController as journeys">  
+            <form id="edit-user" ng-submit="journeys.updateJourney()">
+              <input type="text" name='name' id="journey-name" ng-model="journeys.journey.name" placeholder="Where did you go?">
+              <input type="text" name='description' id="journey-description" ng-model="journeys.journey.description" placeholder="Description">
+              <input type="date" name='start' id="journey-description" ng-model="journeys.journey.start" placeholder="Start of trip">
+              <input type="date" name='end' id="journey-description" ng-model="journeys.journey.end" placeholder="End of trip">
+              <input type="submit" value='Add Journey' id="submit">
+            </form>
+            </div>
           </div>
         </div>
       </div>
@@ -22,20 +33,11 @@
   </div>
 </div>
 
-<!-- <div ng-controller="JourneysController as journeys">  
- -->  <div class="media" ng-repeat="country in users.user.countries">
+ <div class="media" ng-repeat="country in users.user.countries">
 
     <div class="media-body">
     <h1>Journeys:</h1>
    <h4 class="media-heading">{{ country.name }}</h4>
-
-<!--       <h4 class="media-heading">{{ journey.name }}</h4>
-      <p><strong>Where I went:</strong> {{ journey.country.name }}, {{ journey.country.countryCode }}</p>
-      <p><strong>Description:</strong> {{ journey.description }}</p>
-      <p><strong>Who went:</strong> {{ journey.users[0].name }}</p> -->
     </div>
   </div>
-
-
-<!-- </div>
- --></section>
+</section>
