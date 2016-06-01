@@ -28,11 +28,11 @@ function CountriesController(Country, Journey, User, $state, CurrentUser) {
   function getUsers() {
     User.query(function(data){
       self.all = data.users
-      for (var i = 0; i < 3; i++ )
-      self.countries = {
-        self.all[0].countries[i].countryCode: '#3498db',
-      }
-      console.log(self.countries);
+      // for (var i = 0; i < 3; i++ )
+      // self.countries = {
+      //   self.all[0].countries[i].countryCode: '#3498db',
+      // }
+      // console.log(self.countries);
     });
   }
 
@@ -51,19 +51,26 @@ function CountriesController(Country, Journey, User, $state, CurrentUser) {
        map: 'world_mill_en',
        zoomButtons : false,
        backgroundColor: '#f5f5f5',
+       selectedRegions: ['GB', 'JP'],
        regionStyle: {
         initial: {
 
           fill: '#757575'
-        },
-        hover: {
-          fill: "#d3d3d3"
         }
-      },
-      series: {
-        regions: [{
-          values: self.countries
-        }]
+      
+
+      //   ,
+      //   hover: {
+      //     fill: "#d3d3d3"
+      //   }
+      // },
+      // series: {
+      //   regions: {[
+      //   'GB'
+      // ]},
+      //   {
+      //   values: '#3498db'
+      //   }
       }
 
     });
