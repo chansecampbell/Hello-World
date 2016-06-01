@@ -22,16 +22,31 @@ a {
 .navbar-default .navbar-brand {
     color: #f5f5f5;
     font-size: 3em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #f5f5f5;
 }
 
 .navbar-default .navbar-nav > li > a {
     color: #f5f5f5;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  font-weight: 700;
+  color: #f5f5f5;
 }
 /*ng-map {
   height: 600px;
   width: 100%;
 }*/
 
+h1, h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #3498db;
+}
 
 #world-map {
   width: 100%;
