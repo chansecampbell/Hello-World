@@ -2,15 +2,10 @@
   <div class="col-md-8">
 <section>
   <div class="container">
-        <div class="main-section">
-          <div class="media">
-            <span class="media-left">
             <div class="row">
               <div class="col-md-6">
             <img ng-src="{{ users.user.picture }}" id="profile-picture">
-           </span>
            </div>
-           <div class="media-body">
              <div class="col-md-6 md-centered">
             <h2 class="media-heading">{{ users.user.name | uppercase }}</h2>
             <p><strong>Age:</strong> {{ users.user.age }}</p>
@@ -77,10 +72,7 @@
           </div>
         </div>
       </div>
-    </div>
-    </span>
-    </div>
-    </div>
+
 
 
 <h1>Countries visited:</h1>
@@ -90,7 +82,6 @@
    <h4 class="media-heading">{{ country.name }}</h4>
     </div>
   </div>
-  <button ng-click="users.getCountries()">Click here for a list</button>
 </section>
 
   </div>

@@ -7,8 +7,9 @@ function CountriesController(Country, Journey, User, $state, CurrentUser) {
   var self            = this;
   self.all            = [];
   self.getCountries   = getCountries;
-  self.countries = {};
+  self.countries      = {};
   self.mapOutCountries = mapOutCountries;
+  self.getUsers        = getUsers;
 
 
   function getCountries(country) {
@@ -21,6 +22,17 @@ function CountriesController(Country, Journey, User, $state, CurrentUser) {
       // console.log(data.countries[0].countryCode);
      // return self.all.map(function(country) {
      //  return country.name;
+    });
+  }
+
+  function getUsers() {
+    User.query(function(data){
+      self.all = data.users
+      for (var i = 0; i < 3; i++ )
+      self.countries = {
+        self.all[0].countries[i].countryCode: '#3498db',
+      }
+      console.log(self.countries);
     });
   }
 
@@ -81,7 +93,7 @@ function CountriesController(Country, Journey, User, $state, CurrentUser) {
 
   self.getCountries();
   self.mapOutCountries();
-
+  self.getUsers();
 }
 
 
