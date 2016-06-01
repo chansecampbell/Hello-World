@@ -24,7 +24,6 @@
     "ngmap": "^1.17.3",
     "jvectormap": "^2.0.4",
     "bower-jvectormap": "^1.2.2",
-    "ui-bootstrap": "^1.3.3",
     "angular-bootstrap": "^1.3.3"
   }
 }

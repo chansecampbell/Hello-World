@@ -5,4 +5,7 @@ var countrySchema = mongoose.Schema({
   countryCode: { type: String }
 });
 
+countrySchema.index({ name: "text"});
+
+
 module.exports = mongoose.model("Country", countrySchema);

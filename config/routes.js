@@ -32,7 +32,10 @@ router.route('/journeys/:id')
 router.route('/countries')
   .get(countriesController.countriesIndex);
 
+router.route('/countries/search')
+  .post(countriesController.countriesSearch);
+
 router.route('/countries/:id')
-  .get(countriesController.countriesShow)
+  .get(countriesController.countriesShow);
 
 module.exports = router;

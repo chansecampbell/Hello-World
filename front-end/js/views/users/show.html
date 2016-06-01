@@ -30,9 +30,9 @@
 <!--               <input type="text" name='name' id="journey-name" class="form-control" ng-model="journeys.journey.name" placeholder="Where did you go?"> -->
 
               <input type="text" 
-                data-ng-model="journeys.journey.name" 
+                data-ng-model="journeys.journey.country" 
                 placeholder="Where did you go?" 
-                uib-typeahead="country for country in users.getCountry($viewValue)" 
+                uib-typeahead="country for country in users.getCountries($viewValue)" 
                 typeahead-loading="loadingCountries" 
                 typeahead-no-results="noResults" 
                 class="form-control">

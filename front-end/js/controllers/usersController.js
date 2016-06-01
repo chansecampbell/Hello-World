@@ -28,13 +28,14 @@ angular
   }
 
   function getCountries(query) {
-      $http.get(API + '/countries', {query: query})
+      $http.post(API + '/countries/search', {query: query})
         .then(function(response){
-          var countries = response.data.countries;
+          var countries = response.data;
+          console.log(countries);
           // console.log(countries);
-          for (var i = 0; i < countries.length; i++) {
-            return countries[i].name;
-          }
+          // for (var i = 0; i < countries.length; i++) {
+          //   return countries[i].name;
+          // }
           // return countries.map(function(country) {
           //   return country[0];
           // });

@@ -15,7 +15,26 @@ function countriesShow(req, res){
   });
 }
 
+function countriesSearch(req, res){
+  var string = titleCase(req.body.query);
+  Country.find({ name: { $regex : ".*" + string + ".*" }}, function(err, countries) {
+    if (err) return res.status(500).json(err);
+    res.status(200).json(countries);
+  })
+}
+
+function titleCase(str) {
+  var newstr = str.split(" ");
+  for(i=0;i<newstr.length;i++){
+    var copy = newstr[i].substring(1).toLowerCase();
+    newstr[i] = newstr[i][0].toUpperCase() + copy;
+  }
+   newstr = newstr.join(" ");
+   return newstr;
+}  
+
 module.exports = {
   countriesIndex:  countriesIndex,
-  countriesShow:   countriesShow
+  countriesShow:   countriesShow,
+  countriesSearch: countriesSearch
 };
