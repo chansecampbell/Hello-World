@@ -1,6 +1,6 @@
 angular
-  .module('logging')
-  .controller('JourneysController', JourneysController);
+.module('logging')
+.controller('JourneysController', JourneysController);
 
 JourneysController.$inject = ['Journey', '$state', 'CurrentUser', 'User'];
 function JourneysController(Journey, $state, CurrentUser, User) {
@@ -38,4 +38,4 @@ function JourneysController(Journey, $state, CurrentUser, User) {
 
   self.getJourneys();
 
-  }
+}

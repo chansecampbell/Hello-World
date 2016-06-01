@@ -2,79 +2,80 @@ angular
 .module('logging')
 .controller('CountriesController', CountriesController);
 
-CountriesController.$inject = ['Country', 'Journey', 'User', '$state', 'CurrentUser'];
-function CountriesController(Country, Journey, User, $state, CurrentUser) {
+CountriesController.$inject = ['Country', 'Journey', 'User', '$state', 'CurrentUser', '$scope', '$http'];
+function CountriesController(Country, Journey, User, $state, CurrentUser, $scope, $http) {
   var self            = this;
   self.all            = [];
   self.getCountries   = getCountries;
-  // self.journeys       = [];
   self.countries = {};
-  self.getJourneys    = getJourneys;
   self.mapOutCountries = mapOutCountries;
 
 
-  function getCountries() {
+  function getCountries(country) {
     Country.query(function(data){
       self.all = data.countries;
-      for (var i = 0; i < self.all.length; i++) {
-        // console.log(self.all[i].countryCode);
-      }
+      // for (var i = 0; i < self.all.length; i++) {
+      //   // console.log(self.all[i].countryCode);
+      // }
+      // console.log(data.countries[0].name);
+      // console.log(data.countries[0].countryCode);
+     // return self.all.map(function(country) {
+     //  return country.name;
     });
   }
 
 
   function mapOutCountries() {
     var currentUser = CurrentUser.getUser();
-    console.log(currentUser.email);
+    console.log(currentUser);
   }
 
 
-  function getJourneys() {
-    Journey.query(function(data){
-      self.journeys = data.journeys;
-      // self.journeys = data.journeys[1].country.countryCode;
-
-      console.log(self.journeys);
-
-      // for (var i = 0; i < self.journeys.length; i++) {
-      //   var item = self.journeys[i];
-      //   self.countries.push(item);
-      //   console.log(self.countries);
-      // }
+  // function getJourneys() {
+  //   Journey.query(function(data){
+  //     self.journeys = data.journeys;
+  //     // self.journeys = data.journeys[1].country.countryCode;
 
 
-    });
+  //     // for (var i = 0; i < self.journeys.length; i++) {
+  //     //   var item = self.journeys[i];
+  //     //   self.countries.push(item);
+  //     //   console.log(self.countries);
+  //     // }
 
 
-    self.colour = '#3498db';
+  //   });
 
-    self.countries["GB"] = self.colour;
+  //   }
 
+  self.colour = '#3498db';
 
-    self.map = 
-    $('#world-map').vectorMap({
-      map: 'world_mill_en',
-      zoomButtons : false,
-        backgroundColor: '#f5f5f5',
-          regionStyle: {
-                 initial: {
-
-                   fill: '#757575'
-                 },
-                 hover: {
-                     fill: "#d3d3d3"
-                   }
-        },
-        series: {
-         regions: [{
-           values: self.countries
-         }]
-        }
-
-     });
+  self.countries["GB"] = self.colour;
 
 
-  }
+  self.map = 
+  $('#world-map').vectorMap({
+    map: 'world_mill_en',
+    zoomButtons : false,
+    backgroundColor: '#f5f5f5',
+    regionStyle: {
+     initial: {
+
+       fill: '#757575'
+     },
+     hover: {
+       fill: "#d3d3d3"
+     }
+   },
+   series: {
+     regions: [{
+       values: self.countries
+     }]
+   }
+
+ });
+
+
 
   // self.countries = {
   //   IN:'#33ccff',
@@ -109,7 +110,8 @@ function CountriesController(Country, Journey, User, $state, CurrentUser) {
 
   //  });
 
-  self.getJourneys();
+  self.getCountries();
+  // self.getJourneys();
 
 }
 

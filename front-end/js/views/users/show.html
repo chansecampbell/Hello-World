@@ -9,19 +9,30 @@
            </span>
            <div class="media-body">
             <h2 class="media-heading">{{ users.user.name | uppercase }}</h2>
-            <p><strong>Email:</strong> {{ users.user.email }}</p>
-            <h3>Edit User</h3>
-            <form id="edit-user" ng-submit="users.updateUser()">
+            <p><strong>Age:</strong> {{ users.user.age }}</p>
+            <p><strong>Nationality:</strong> {{ users.user.nationality }}</p>
+            <button class="btn" ng-click="showedit = !showedit" ng-click="showjourney=false">Edit Profile</button> 
+            <form id="edit-user" ng-submit="users.updateUser()" ng-show="showedit">
               <input type="text" name='edit-name' id="edit-name" class="form-control" ng-model="users.user.name">
-              <input type="submit" value='Update' id="submit">
+              <input type="number" name='edit-age' id="edit-age" class="form-control" ng-model="users.user.age" placeholder="How old are you?">
+              <input type="text" name='edit-nationality' id="edit-nationality" class="form-control" ng-model="users.user.nationality" placeholder="What is your nationality?">
+              <input type="submit" value='Update' id="submit" ng-click="showedit=false" class="btn">
             </form>
 
-            <h3>Add a journey</h3>
-            <div ng-controller="JourneysController as journeys">  
-            <form id="edit-user" class="form-group" ng-submit="journeys.updateJourney()">
+            <button class="btn" ng-click="showjourney = !showjourney">Add Journey</button> 
+            <div ng-controller="JourneysController as journeys"> 
+            <form id="edit-user" class="form-group" ng-submit="journeys.updateJourney()" ng-show="showjourney">
             <div class="row">
               <div class="col-md-12">
               <input type="text" name='name' id="journey-name" class="form-control" ng-model="journeys.journey.name" placeholder="Where did you go?">
+            
+   <!--       <div ng-controller="CountriesController as countries"> 
+              <input type="text" data-ng-model="journeys.journey.name" placeholder="Where did you go?" uib-typeahead="country for country in countries.getCountry($viewValue)" typeahead-loading="Loading Countries.." typeahead-no-results="noResults" class="form-control">
+              </div>
+                  <i ng-show="loadingGames" class="glyphicon glyphicon-refresh"></i>
+                  <div ng-show="noResults">
+                    <i class="glyphicon glyphicon-remove"></i> No Results Found
+                  </div> -->
               </div>
               </div>
               <div class="row">
@@ -48,7 +59,7 @@
             <input type="text" name='pictures' id="journey-pictures" class="form-control" ng-model="journeys.journey.pictures" placeholder="Add a picture">
             </div>
             </div>
-              <input type="submit" value='Add Journey' id="submit">
+              <input type="submit" value='Add Journey' id="submit" ng-click="showjourney=false" class="btn">
             </form>
             </div>
           </div>

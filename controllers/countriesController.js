@@ -1,8 +1,9 @@
 var Country   = require('../models/country');
 
 function countriesIndex(req, res) {
-  Country.find(function(err, countries){
+  Country.find({}, function(err, countries){
     if (err) return res.status(404).json({message: 'Something went wrong.'});
+    console.log(countries);
     res.status(200).json({ countries: countries });
   });
 }

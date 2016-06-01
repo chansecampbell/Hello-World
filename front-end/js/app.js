@@ -1,5 +1,5 @@
 angular
-  .module('logging', ['angular-jwt', 'ngResource', 'ui.router', 'satellizer'])
+  .module('logging', ['angular-jwt', 'ngResource', 'ui.router', 'satellizer', 'ui.bootstrap'])
   .constant('API', 'http://localhost:3000/api')
   .config(MainRouter)
   .config(oauthConfig)

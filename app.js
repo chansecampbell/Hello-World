@@ -114,7 +114,7 @@ app.use("/api", routes);
 
 app.use(express.static(__dirname + "/front-end"));
 
-app.get("*", function(req, res) {
+app.get("/*", function(req, res) {
     res.sendFile(__dirname + "/front-end/index.html");
 });
 
