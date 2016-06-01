@@ -1,4 +1,5 @@
 var Journey   = require('../models/journey');
+var User   = require('../models/user');
 
 function journeysIndex(req, res) {
   Journey.find()
@@ -11,12 +12,19 @@ function journeysIndex(req, res) {
 }
 
 function journeysCreate(req, res){
-  var journey = new Journey(req.body.journey);
-  journey.users = [req.body.user._id];
-  journey.save(function(err, journey) {
-    if (err) return res.status(500).send(err);
-    res.status(201).send(journey);
-  });
+  User.findById(req.body.user._id, function(err, user) {
+    var journey = new Journey(req.body.journey);
+    journey.users = [req.body.user._id];
+    journey.save(function(err, journey) {
+      if (err) return res.status(500).send(err);
+      user.journeys.push(journey);
+      user.countries.push(journey.country);
+      user.save(function(err, user) {
+        if (err) return res.status(500).send(err);
+        res.status(201).send({journey: journey, user: user});
+      });  
+    });
+  })
 }
 
 function journeysShow(req, res){

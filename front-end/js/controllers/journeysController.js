@@ -26,10 +26,6 @@ function JourneysController(Journey, $state, CurrentUser, User) {
         console.log(response);
         self.journey = {};
       });
-      // User.update({ id: self.user._id }, { user: self.user, journey: self.journey }, function(data){
-      //   console.log('data: ', data)
-      //   self.user = data;
-      // });
     } else {
       Journey.save({ journey: self.journey, user: currentUser }, function(journey) {
         // self.journeys.push(journey);
