@@ -13,10 +13,8 @@ function usersShow(req, res){
   var id = req.params.id;
 
   User.findById({ _id: id })
-    .populate({
-      path: "journeys",
-      populate: { path: "country"}
-    })
+    .populate("journeys")
+    .populate("countries")
     .exec(function(err, user){
     console.log(user.journeys);  
     if (err) return res.status(404).json({message: 'Something went wrong.'});
@@ -26,6 +24,7 @@ function usersShow(req, res){
 
 function usersUpdate(req, res){
   var id = req.body.user;
+  req.body.users.journey = [req.body.journey._id];
   User.findByIdAndUpdate({ _id: id }, req.body.user, { new: true }, function(err, user){
     if (err) return res.status(500).send(err);
     if (!user) return res.status(404).send(err);

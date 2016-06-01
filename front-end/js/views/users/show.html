@@ -23,11 +23,11 @@
 </div>
 
 <!-- <div ng-controller="JourneysController as journeys">  
-  <div class="media" ng-repeat="journey in journeys.all"> -->
+ -->  <div class="media" ng-repeat="country in users.user.countries">
 
     <div class="media-body">
     <h1>Journeys:</h1>
-   <h4 class="media-heading">{{ users.user }}</h4>
+   <h4 class="media-heading">{{ country.name }}</h4>
 
 <!--       <h4 class="media-heading">{{ journey.name }}</h4>
       <p><strong>Where I went:</strong> {{ journey.country.name }}, {{ journey.country.countryCode }}</p>
@@ -37,5 +37,5 @@
   </div>
 
 
-</div>
-</section>
+<!-- </div>
+ --></section>

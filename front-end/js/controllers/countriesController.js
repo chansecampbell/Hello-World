@@ -1,26 +1,32 @@
 angular
-  .module('logging')
-  .controller('CountriesController', CountriesController);
+.module('logging')
+.controller('CountriesController', CountriesController);
 
-CountriesController.$inject = ['Country', 'Journey', '$state', 'CurrentUser'];
-function CountriesController(Country, Journey, $state, CurrentUser) {
+CountriesController.$inject = ['Country', 'Journey', 'User', '$state', 'CurrentUser'];
+function CountriesController(Country, Journey, User, $state, CurrentUser) {
   var self            = this;
   self.all            = [];
   self.getCountries   = getCountries;
   // self.journeys       = [];
+  self.countries = {};
   self.getJourneys    = getJourneys;
+  self.mapOutCountries = mapOutCountries;
 
 
   function getCountries() {
     Country.query(function(data){
       self.all = data.countries;
       for (var i = 0; i < self.all.length; i++) {
-        console.log(self.all[i].countryCode);
+        // console.log(self.all[i].countryCode);
       }
     });
   }
 
-  self.countries = {};
+
+  function mapOutCountries() {
+    var currentUser = CurrentUser.getUser();
+    console.log(currentUser.email);
+  }
 
 
   function getJourneys() {
@@ -40,23 +46,23 @@ function CountriesController(Country, Journey, $state, CurrentUser) {
     });
 
 
-      self.colour = '#33ccff';
+    self.colour = '#33ccff';
 
-      self.countries["GB"] = self.colour;
+    self.countries["GB"] = self.colour;
 
 
-      self.map = 
-      $('#world-map').vectorMap({
-        map: 'world_mill_en',
+    self.map = 
+    $('#world-map').vectorMap({
+      map: 'world_mill_en',
         // backgroundColor: '#f5f5f5',
-       series: {
+        series: {
          regions: [{
            values: self.countries
          }]
        }
 
 
-       });
+     });
 
 
   }
@@ -94,7 +100,7 @@ function CountriesController(Country, Journey, $state, CurrentUser) {
 
   //  });
 
-self.getJourneys();
+  self.getJourneys();
 
 }
 

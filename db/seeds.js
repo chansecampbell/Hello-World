@@ -129,12 +129,14 @@ var Journey = require("../models/journey");
           });
 
 
-
+user1.countries.push(country1);
+user1.countries.push(country2);
+user2.countries.push(country3);
+user3.countries.push(country4);
 journey1.users.push(user1);
 journey2.users.push(user1);
 journey3.users.push(user2);
 journey4.users.push(user3);
-
 
 
 user1.save(function(err, user) {

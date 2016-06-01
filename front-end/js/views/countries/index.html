@@ -1,9 +1,14 @@
  <div ng-controller="CountriesController as countries">
  <div ng-modal="countries.map" id="world-map"></div>
- <ul ng-repeat="journey in countries.journeys">
+<!--  <ul ng-repeat="journey in countries.journeys">
    <li><strong>Journeys:</strong> {{ journey.country.countryCode }} </li>
-   </ul>
-<!--  <button ng-click="countries.getCountries()">Click here for a list</button>
- --><!--  <button ng-click="countries.getJourneys()">Click here for all journeys</button>
- --> 
+   </ul> -->
+    <button ng-click="countries.mapOutCountries()">Click here for a list</button>
+
+ 
  </div>
+
+
+ 
+ <!--  <button ng-click="countries.getCountries()">Click here for a list</button>
+  --><!--  <button ng-click="countries.getJourneys()">Click here for all journeys</button>

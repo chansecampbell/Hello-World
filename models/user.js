@@ -12,7 +12,8 @@ var userSchema = mongoose.Schema({
     age: { type: Date },
     gender: { type: String },
     nationality: { type: String },
-    journeys: [{type: mongoose.Schema.ObjectId, ref: 'Journey'}]
+    journeys: [{type: mongoose.Schema.ObjectId, ref: 'Journey'}],
+    countries: [{type: mongoose.Schema.ObjectId, ref: 'Country'}],
   });
 
 userSchema.methods.validatePassword = function(password){

@@ -50,9 +50,9 @@ angular
 
   self.authenticate = function(provider) {
     $auth.authenticate(provider);
-    $state.go("home");
-    self.getUsers();
     self.currentUser = CurrentUser.getUser();
+    self.getUsers();
+    $state.go("home");
   };
 
 

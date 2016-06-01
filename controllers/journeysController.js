@@ -12,6 +12,7 @@ function journeysIndex(req, res) {
 
 function journeysCreate(req, res){
   var journey = new Journey(req.body.journey);
+  journey.users = [req.body.user._id];
   journey.save(function(err, journey) {
     if (err) return res.status(500).send(err);
     res.status(201).send(journey);
@@ -31,6 +32,7 @@ function journeysShow(req, res){
 
 function journeysUpdate(req, res){
   var id = req.body.journey;
+  req.body.journey.users = [req.body.user._id];
   Journey.findByIdAndUpdate({ _id: id }, req.body.journey, { new: true }, function(err, journey){
     if (err) return res.status(500).send(err);
     if (!journey) return res.status(404).send(err);
