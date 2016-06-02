@@ -101,6 +101,10 @@ h1, h2 {
  display: none;
 }
 
+#title-header {
+  font-size: 3em;
+}
+
 
 /***************** HOME PAGE ********************/
 
@@ -171,6 +175,10 @@ img.journey-photo-stream {
   color: #3498db;
 }
 
+.mg-journey {
+  font-size: 20em;
+}
+
 .user-countries {
   text-align: center;
 }
@@ -182,6 +190,7 @@ img.journey-photo-stream {
 .stamp-header {
   border-bottom: 3px solid #3498db;
   padding-bottom: 5px;
+  padding-top: 20px;
 }
 
 .user-profile-text {
@@ -207,6 +216,10 @@ img.journey-photo-stream {
 
 @media only screen and (max-width: 991px) {
 
+  .footer-nav-links a {
+    padding-left: 60px;
+  }
+
 }
 
 @media only screen and (max-width: 767px) {
@@ -228,8 +241,14 @@ img.journey-photo-stream {
     .top-header-nav:hover {
       font-weight: 700;
       color: #f5f5f5;
+      background: #3498db;
+    }
+
+    .footer-nav-links a {
+      padding-left: 40px;
     }
 }
+
 
 
 .col-md-8.col-md-offset-2.col-border .row {
@@ -242,4 +261,40 @@ img.journey-photo-stream {
 
 img.profile-picture {
   max-width: 100%;
+}
+
+
+
+/********************* ANIMATIONS ************************/
+
+
+@-webkit-keyframes spinnerRotate
+{
+    from{-webkit-transform:rotate(0deg);}
+    to{-webkit-transform:rotate(360deg);}
+}
+@-moz-keyframes spinnerRotate
+{
+    from{-moz-transform:rotate(0deg);}
+    to{-moz-transform:rotate(360deg);}
+}
+@-ms-keyframes spinnerRotate
+{
+    from{-ms-transform:rotate(0deg);}
+    to{-ms-transform:rotate(360deg);}
+}
+
+.spin{
+    -webkit-animation-name: spinnerRotate;
+    -webkit-animation-duration: 30s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spinnerRotate;
+    -moz-animation-duration: 30s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spinnerRotate;
+    -ms-animation-duration: 30s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
 }

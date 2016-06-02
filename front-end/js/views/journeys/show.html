@@ -5,6 +5,44 @@
    <section>
     <div class="container">
       <div class="row">
+        <div class="col-md-4 user-profile-text">
+        <i class="mg map-{{ journeyShow.journey.country.countryCode.toLowerCase() }} mg-journey" ></i>
+        </div>
+        <div class="col-md-8 user-profile-text">
+          <h1 class="media-heading">{{journeyShow.journey.users[0].firstName }} {{journeyShow.journey.users[0].lastName }}'s trip to {{journeyShow.journey.country.name }}</h1>
+          <h3>Start date:</h3> {{ journeyShow.journey.start }}
+          <h3>End date:</h3> {{ journeyShow.journey.end }}
+          <h3>How would you describe the trip in one sentence?:</h3> {{ journeyShow.journey.description }}
+      </div>
+    </div>
+  </div>
+ <h1 class="center-text stamp-header">Photo Stream</h1>
+ <ul class="col-md-4 col-xs-6 user-countries" ng-repeat="picture in journeyShow.journey.pictures">
+
+   <li>
+     <div class="image-square-wrapper">
+       <img src="{{ picture }}" class="journey-photo-stream">
+     </div>
+   </li>
+ </ul>
+ </div>
+
+
+</section>
+
+</div>
+</div>
+
+
+<!-- 
+
+<br>
+<br>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-border">
+   <section>
+    <div class="container">
+      <div class="row">
         <div class="col-md-12 user-profile-text">
           <h1 class="media-heading">{{journeyShow.journey.users[0].firstName }} {{journeyShow.journey.users[0].lastName }}'s trip to {{journeyShow.journey.country.name }}</h1>
         </div>
@@ -48,4 +86,4 @@
 
   </section>
 </div>
-</div>
+</div> -->
