@@ -253,8 +253,12 @@ img.journey-photo-stream {
 
 @media only screen and (max-width: 991px) {
 
+  .footer-nav-links {
+    text-align: center;
+  }
+
   .footer-nav-links a {
-    padding-left: 60px;
+    padding: 0px 10px;
   }
 
   .journey-wrapper {
