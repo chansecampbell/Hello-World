@@ -4,19 +4,24 @@
   <div ng-controller="JourneysController as journeys">  
   <ul class="media-list">
     <li class="media" ng-repeat="journey in journeys.all">
-      <div class="media-left">
+
+
+    <div class="row">
+      <div class="col-md-4">
         <a ui-sref="user({ id: journey.users[0]._id })">
-        <img ng-src="{{ journey.users[0].picture }}" class="media-object">
+           <img ng-src="{{ journey.users[0].picture }}" class="media-object">
         </a>
       </div>
-      <a ui-sref="journey({ id: journey._id })">
-      <div class="media-body">
-        <h4 class="media-heading">{{ journey.users[0].firstName }} added {{ journey.country.name }} as a destination</h4>
-        <p><strong>Description:</strong> {{ journey.description }}</p>
-        <p><strong>From:</strong> {{ journey.start }}</p>
-        <p><strong>To:</strong> {{ journey.end }}</p>
-      </div>
-      </a>
+      <div class="col-md-6">
+        <h1 class="media-heading">{{ users.user.firstName }} {{ users.user.lastName }} </h1>
+        <a ui-sref="journey({ id: journey._id })">
+        <div class="media-body">
+          <h4 class="media-heading">{{ journey.users[0].firstName }} added {{ journey.country.name }} as a destination</h4>
+          <p><strong>Description:</strong> {{ journey.description }}</p>
+        </div>
+        </a>
+        </div>
+        </div>
     </li>
   </ul>
   </div>

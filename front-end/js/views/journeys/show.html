@@ -3,28 +3,42 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2 col-border">
    <section>
-   <h1>{{journeyShow.journey.country }}</h1>
-<!--     <div class="container">
+    <div class="container">
       <div class="row">
-        <div class="col-md-4 user-profile-text">
-          <a class="profile-picture-link" ui-sref="usersEdit({ id: users.user._id })"><img ng-src="{{ users.user.picture }}" id="profile-picture"></a>
+        <div class="col-md-12 user-profile-text">
+          <h1 class="media-heading">{{journeyShow.journey.users[0].firstName }} {{journeyShow.journey.users[0].lastName }}'s trip to {{journeyShow.journey.country.name }}</h1>
         </div>
-        <div class="col-md-4 user-profile-text">
-          <h1 class="media-heading">{{ users.user.firstName }} {{ users.user.lastName }} </h1>
-          <p><h3>{{ users.user.age }}</h3>
-          <p><h3>{{ users.user.nationality }}</h3></p>
+      </div>
+      <div class="row">
+        <div class="col-md-12 user-profile-text">
+          <i class="mg map-{{ journeyShow.journey.country.countryCode.toLowerCase() }}" ></i><br>
+        </div>
+      </div>
 
-          <button class="btn user-journey-nav" ui-sref="journeysNew">Add New Journey</button> 
-          <button class="btn user-journey-nav" ui-sref="journeysNew">View Journeys</button> 
+      <div class="row">
+        <div class="col-md-12 user-profile-text">
+          <h3>Start date:</h3> {{ journeyShow.journey.start }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 user-profile-text">
+          <h3>End date:</h3> {{ journeyShow.journey.end }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 user-profile-text">
+          <h3>How would you describe the trip in one sentence?:</h3> {{ journeyShow.journey.description }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 user-profile-text">
+        <h3>Photo Stream:</h3>
+          <img src="{{ journeyShow.journey.pictures[0] }}">
+        </div>
+      </div>
+
       </div>
     </div>
-  </div> -->
-<!--   <h1 class="center-text stamp-header">Stamp Book: {{ users.user.countries.length }}</h1>
-  <div class="col-md-4 col-xs-6 user-countries" ng-repeat="country in users.user.countries">
-   <i class="mg map-{{ country.countryCode.toLowerCase() }}" ></i><br>
-   <h3>{{ country.name }}</h3></div>
- </div> -->
-<button ng-click="journey.all"></button>
 
 </section>
 </div>
