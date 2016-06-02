@@ -48,6 +48,7 @@ angular
       });
       self.getUsers();
       self.currentUser = CurrentUser.getUser();
+      $state.go("user");
     } 
 
 

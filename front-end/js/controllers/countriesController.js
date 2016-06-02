@@ -8,6 +8,14 @@ function CountriesController(Country, Journey, User, $state, CurrentUser) {
   self.users            = [];
   self.countries      = [];
   self.getUsers        = getUsers;
+  self.getCountries    = getCountries;
+
+
+  function getCountries() {
+    Country.query(function(data){
+      self.all = data.countries;
+    });
+  }
 
   function getUsers() {
     self.users       = [];

@@ -1,14 +1,5 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2 col-border">
-    <section ng-show="showedit">
-     <form id="edit-user" ng-submit="users.updateUser()">
-       <input type="text" name='edit-first-name' id="edit-first-name" class="form-control" ng-model="users.user.firstName">
-       <input type="number" name='edit-age' id="edit-age" class="form-control" ng-model="users.user.age" placeholder="How old are you?">
-       <input type="text" name='edit-nationality' id="edit-nationality" class="form-control" ng-model="users.user.nationality" placeholder="What is your nationality?">
-       <input type="submit" value='Update' id="submit" ng-click="showedit=false" class="btn">
-     </form>
-   </section>
-
    <section>
     <div class="container">
       <div class="row">
@@ -21,14 +12,14 @@
           <p><strong>What is your nationality?</strong> {{ users.user.nationality }}</p>
           <p><strong>How many journeys have you been on?</strong> {{ users.user.journeys.length }}</p>
           <p><strong>How many countries have you visited?</strong> {{ users.user.countries.length }}</p>
-          <button class="btn" ng-click="showedit = !showedit">Edit Profile</button> 
+          <button class="btn" ui-sref="usersEdit">Edit Profile</button> 
           <button class="btn" ui-sref="journeysNew">Add Journey</button> 
 
       </div>
     </div>
   </div>
 
-  <h1>Countries visited: {{ users.user.countries.length }}</h1>
+  <h1 class="center-text">Stamp Book: {{ users.user.countries.length }}</h1>
   <div class="col-md-4 col-xs-6 user-countries" ng-repeat="country in users.user.countries">
    <i class="mg map-{{ country.countryCode.toLowerCase() }}" ></i><br>
    <h3>{{ country.name }}</h3></div>

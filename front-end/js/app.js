@@ -35,6 +35,15 @@ function MainRouter($stateProvider, $urlRouterProvider) {
         });
       }
     })
+    .state('usersEdit', {
+      url: "/users/:id/edit",
+      templateUrl: "./js/views/users/edit.html",
+      controller: function($scope, $stateParams, User) {
+        User.get({ id: $stateParams.id }, function(res){
+          $scope.$parent.users.user = res.user;
+        });
+      }
+    })
     .state('countries', {
       url: "/countries",
       templateUrl: "./js/views/countries/index.html"

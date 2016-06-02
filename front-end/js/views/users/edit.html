@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-border">
+    <section>
+      <h1>Edit User profile</h1>
+      <form id="edit-user" ng-submit="users.updateUser()">
+       <input type="text" name='edit-first-name' id="edit-first-name" class="form-control" ng-model="users.user.firstName">
+       <input type="number" name='edit-age' id="edit-age" class="form-control" ng-model="users.user.age" placeholder="How old are you?">
+       <input type="text" name='edit-nationality' id="edit-nationality" class="form-control" ng-model="users.user.nationality" placeholder="What is your nationality?">
+       <input type="submit" value='Update' id="submit" ng-click="showedit=false" class="btn">
+     </form>
+   </section>
+ </div>
+</div>

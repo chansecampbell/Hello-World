@@ -46,28 +46,28 @@
       </div>
       <ul class="nav navbar-nav navbar-right">
       <li ng-show="users.checkLoggedIn()">
-                <a href="#">Welcome, {{ users.currentUser.firstName }}</a>
+                <a href="#" class="top-header-nav">Welcome, {{ users.currentUser.firstName }}</a>
               </li>
               <li ng-show="users.checkLoggedIn()">
-                <a href="#" ui-sref="journeys">Feed</a>
+                <a href="#" class="top-header-nav" ui-sref="journeys">Feed</a>
               </li> 
               <li ng-show="users.checkLoggedIn()">
-                <a href="#" ui-sref="user({ id: users.currentUser._id })">Profile</a>
+                <a href="#" class="top-header-nav" ui-sref="user({ id: users.currentUser._id })">Profile</a>
               </li>
               <li ng-show="users.checkLoggedIn()">
-                <a href="#" ui-sref="countries">Map</a>
+                <a href="#" class="top-header-nav" ui-sref="countries">Map</a>
               </li>
               <li ng-hide="users.checkLoggedIn()">
-                <a ng-click="users.authenticate('facebook')">Sign in with Facebook</a>
+                <a class="top-header-nav" ng-click="users.authenticate('facebook')">Sign in with Facebook</a>
               </li>
               <li ng-hide="users.checkLoggedIn()">
-                <a href="#" ui-sref="login">Login</a>
+                <a class="top-header-nav" href="#" ui-sref="login">Login</a>
               </li>
               <li ng-hide="users.checkLoggedIn()">
-                <a href="#" ui-sref="register">Register</a>
+                <a class="top-header-nav" href="#" ui-sref="register">Register</a>
               </li>
               <li ng-show="users.checkLoggedIn()">
-                <a href="#"ui-sref="home" ng-click="users.logout()">Logout</a>
+                <a class="top-header-nav" href="#"ui-sref="home" ng-click="users.logout()">Logout</a>
               </li>
             </ul>
     </div>
