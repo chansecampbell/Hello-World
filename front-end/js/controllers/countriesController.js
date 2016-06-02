@@ -36,7 +36,7 @@ function CountriesController(Country, Journey, User, $state, CurrentUser) {
                      selectedRegions: self.countries,
                      regionStyle: {
                       initial: {
-                        fill: '#757575'
+                        fill: '#616161'
                       },
                       selected: {
                         fill: '#3498db'
