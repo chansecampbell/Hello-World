@@ -64,14 +64,20 @@ app.post('/api/auth/facebook', function(req, res) {
           console.log("User is ", user);
           // if we find the user, we set their facebookId and picture to their profile data
           if(user) {
-            user.facebookId = profile.id;
-            user.picture = user.picture || profile.picture.data.url;
+            if (profile.picture.data.url){
+              user.picture = profile.picture.data.url; 
+            } else {
+              user.picture = user.picture;
+            }
           }
           else {
             // otherwise, we create a new user record with the user's profile data from facebook
             user = new User({
               facebookId: profile.id,
-              name: profile.name,
+              firstName: profile.first_name,
+              lastName: profile.last_name,
+              birthday: profile.birthday,
+              location: profile.location,
               picture: profile.picture.data.url,
               email: profile.email
             });

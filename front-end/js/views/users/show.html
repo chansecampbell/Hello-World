@@ -72,15 +72,10 @@
       </div>
     </div>
 
-
-
-    <h1>Countries visited:</h1>
-    {{ user.currentUser }}
-    <div>
-    <div class="col-md-4 col-xs-6" ng-repeat="country in users.user.countries">
-     <p><i class="mg map-{{ country.countryCode.toLowerCase() }}" ></i><br>
-       <h3>{{ country.name }}</h3></p>
-     </div>
+    <h1>Countries visited: {{ users.user.countries.length }}</h1>
+    <div class="col-md-4 col-xs-6 user-countries" ng-repeat="country in users.user.countries">
+     <i class="mg map-{{ country.countryCode.toLowerCase() }}" ></i><br>
+       <h3>{{ country.name }}</h3></div>
      </div>
 
 

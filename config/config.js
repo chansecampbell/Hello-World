@@ -6,7 +6,8 @@ module.exports = {
   'oauth': {
     'facebook': {
       'accessTokenUrl': 'https://graph.facebook.com/v2.5/oauth/access_token',
-      'profileUrl': 'https://graph.facebook.com/v2.5/me?fields=id,email,name,picture.width(300)'
+      'profileUrl': 'https://graph.facebook.com/v2.5/me?fields=id,email,first_name,last_name,birthday,location,picture.width(300)'
+      // 'profileUrl': 'https://graph.facebook.com/v2.5/me?fields=id,email,name,picture.width(300)'
     }
   }
 };

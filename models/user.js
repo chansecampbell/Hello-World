@@ -4,14 +4,14 @@ var validator     = require("validator");
 
 var userSchema = mongoose.Schema({
 
-    name: { type: String },
+    firstName: { type: String },
+    lastName: { type: String },
     picture: { type: String },
     facebookId: { type: String },
     email: { type: String, unique: true, required: true },
     passwordHash: { type: String },
-    age: { type: Date },
-    gender: { type: String },
-    nationality: { type: String },
+    birthday: { type: Date },
+    location: { type: String },
     journeys: [{type: mongoose.Schema.ObjectId, ref: 'Journey'}],
     countries: [{type: mongoose.Schema.ObjectId, ref: 'Country'}],
   });

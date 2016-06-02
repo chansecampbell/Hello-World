@@ -11,9 +11,10 @@ a {
   cursor: pointer;
 }
 
-section {
+/*section {
   margin-bottom: 50px;
-}
+}*/
+
 /*#page-wrap {
   margin: 0 auto;
   width: 800px;
@@ -118,4 +119,8 @@ h1, h2 {
 
 .mg {
   font-size: 10em;
+}
+
+.user-countries {
+  text-align: center;
 }
