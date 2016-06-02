@@ -11,6 +11,9 @@ a {
   cursor: pointer;
 }
 
+section {
+  margin-bottom: 50px;
+}
 /*#page-wrap {
   margin: 0 auto;
   width: 800px;
@@ -106,4 +109,8 @@ h1, h2 {
 .col-border {
   border-left: 3px solid #3498db;
   border-right: 3px solid #3498db;
+}
+
+.mg {
+  font-size: 10em;
 }

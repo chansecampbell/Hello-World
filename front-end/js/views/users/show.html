@@ -78,10 +78,11 @@
 <h1>Countries visited:</h1>
 {{ user.currentUser }}
  <div class="media" ng-repeat="country in users.user.countries">
-    <div class="media-body">
-   <h4 class="media-heading">{{ country.name }}</h4>
-    </div>
-  </div>
+   <p><i class="mg map-{{ country.countryCode.toLowerCase() }}" ></i><br>
+   <h3>{{ country.name }}</h3></p>
+   </div>
+
+   
 </section>
 
   </div>
