@@ -2,14 +2,18 @@ angular
 .module('logging')
 .controller('CountriesController', CountriesController);
 
-CountriesController.$inject = ['Country', 'Journey', 'User', '$state', 'CurrentUser'];
-function CountriesController(Country, Journey, User, $state, CurrentUser) {
+CountriesController.$inject = ['Country', 'Journey', 'User', '$state', 'CurrentUser', 'Upload', 'API', 'AWS_URL', 'URL'];
+function CountriesController(Country, Journey, User, $state, CurrentUser, Upload, API, AWS_URL, URL) {
   var self            = this;
   self.users            = [];
   self.countries      = [];
   self.getUsers        = getUsers;
   self.getCountries    = getCountries;
   self.countriesCount = 0;
+  self.file = null;
+  self.uploadedFile = null;
+  self.files = null;
+  self.uploadSingle = uploadSingle;
 
 
   function getCountries() {
@@ -49,6 +53,20 @@ function CountriesController(Country, Journey, User, $state, CurrentUser) {
         }
       }
     })
+  }
+
+  function uploadSingle() {
+    Upload.upload({
+      url: URL + '/upload/single',
+      data: { file: self.file }
+    })
+    .then(function(res) {
+      console.log("Success!");
+      self.user.picture = AWS_URL + res.data.filename;
+    })
+    .catch(function(err) {
+      console.error(err);
+    });
   }
  
 
