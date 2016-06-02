@@ -5,9 +5,10 @@
    <section>
     <div class="container">
       <div class="row">
-        <div class="col-md-6 user-profile-text">
+        <div class="col-md-6 user-profile-text edit-hover">
           <a class="profile-picture-link" ui-sref="usersEdit({ id: users.user._id })">
             <img ng-src="{{ users.user.picture }}" id="profile-picture">
+            <p>Edit Profile</p>
           </a>
         </div>
         <div class="col-md-4 user-profile-text">
@@ -16,7 +17,7 @@
           <p><h3>{{ users.user.location }}</h3></p>
 
           <button class="btn user-journey-nav" ui-sref="journeysNew">Add New Journey</button> 
-          <button class="btn user-journey-nav" ui-sref="journeysNew">View Journeys</button> 
+          <!-- <button class="btn user-journey-nav" ui-sref="journeysNew">View Journeys</button> --> 
       </div>
     </div>
   </div>

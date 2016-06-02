@@ -1,3 +1,5 @@
+@import '_animate'
+
 /***************** GENERAL CSS SETTINGS ********************/
 body {
   background-color: #f5f5f5;
@@ -160,7 +162,21 @@ img.journey-photo-stream {
 
 #world-map {
   width: 100%;
-  height: 500px
+  height: 500px;
+  position: relative;
+
+}
+
+.map-icon {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  color: #3498db;
+  font-size: 2em;
+  position: absolute; 
+     top: 300px; 
+     left: 0; 
+     width: 100%; 
 }
 
 
@@ -205,10 +221,30 @@ img.journey-photo-stream {
 #profile-picture {
   max-width: 300px;
   border-radius: 100%;
+  position: relative;
 }
 
 #profile-picture:hover {
   opacity: 0.4;
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.edit-hover a p {
+  display:none;
+}
+
+.edit-hover a:hover p {
+  display:block;
+  text-decoration: none;
+  font-weight: 700;
+  color: #fff;
+  font-size: 2em;
+  position: absolute; 
+     top: 120px; 
+     left: 0; 
+     width: 100%; 
 }
 
 
@@ -297,4 +333,80 @@ img.profile-picture {
     -ms-animation-duration: 30s;
     -ms-animation-iteration-count: infinite;
     -ms-animation-timing-function: linear;
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+@-webkit-keyframes rubberBand {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    -webkit-transform: scale3d(.95, 1.05, 1);
+    transform: scale3d(.95, 1.05, 1);
+  }
+
+  75% {
+    -webkit-transform: scale3d(1.05, .95, 1);
+    transform: scale3d(1.05, .95, 1);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
 }
