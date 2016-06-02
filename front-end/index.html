@@ -44,6 +44,32 @@
       <div class="navbar-header">
         <a class="navbar-brand" id="title-header" href="#" ui-sref-active="active" ui-sref="home">Hello World .</a>
       </div>
+            <ul class="nav navbar-nav">
+              <li ng-show="users.checkLoggedIn()">
+                <a href="#">Welcome, {{ users.currentUser.name }}</a>
+              </li>
+              <li ng-show="users.checkLoggedIn()">
+                <a href="#" ui-sref="journeys">Feed</a>
+              </li> 
+              <li ng-show="users.checkLoggedIn()">
+                <a href="#" ui-sref="user({ id: users.currentUser._id })">Profile</a>
+              </li>
+              <li ng-show="users.checkLoggedIn()">
+                <a href="#" ui-sref="countries">Map</a>
+              </li>
+              <li ng-hide="users.checkLoggedIn()">
+                <a ng-click="users.authenticate('facebook')">Sign in with Facebook</a>
+              </li>
+              <li ng-hide="users.checkLoggedIn()">
+                <a href="#" ui-sref="login">Login</a>
+              </li>
+              <li ng-hide="users.checkLoggedIn()">
+                <a href="#" ui-sref="register">Register</a>
+              </li>
+              <li ng-show="users.checkLoggedIn()">
+                <a href="#"ui-sref="home" ng-click="users.logout()">Logout</a>
+              </li>
+            </ul>
     </div>
   </nav>
 </header>
@@ -59,7 +85,7 @@
   <main id="main" ui-view></main>
 
 
-  <footer>
+<!--   <footer>
     <nav class="navbar navbar-default navbar-fixed-bottom">
       <div class="container">
 
@@ -91,6 +117,6 @@
           </ul>
           </div>
     </nav>
-  </footer>
+  </footer> -->
 </body>
 </html>

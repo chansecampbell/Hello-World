@@ -84,6 +84,10 @@ h1, h2 {
   height: 500px
 }
 
+.front-page-header {
+  color: #27ae60;
+}
+
 #profile-picture {
   max-width: 300px;
   border-radius: 100%;
@@ -91,6 +95,7 @@ h1, h2 {
 
 #world {
   height: 500px;
+  display: block;
   width: auto;
   margin: 0 auto;
 }

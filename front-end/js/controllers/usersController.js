@@ -12,7 +12,6 @@ angular
   self.currentUser   = null;
   self.error         = null;
   self.getUsers      = getUsers;
-  // self.showUser      = showUser;
   self.updateUser    = updateUser;
   self.register      = register;
   self.login         = login;
@@ -31,27 +30,12 @@ angular
       return $http.post(API + '/countries/search', {query: query})
         .then(function(response){
           var countries = response.data;
-          console.log(countries);
-          // console.log(countries);
-          // for (var i = 0; i < countries.length; i++) {
-          //   return countries[i].name;
-          // }
           return countries.map(function(country) {
             return country.name;
           });
         });
     };
 
-    // vm.getGame = function(query) {
-    //     return $http.post(API + '/games', {query: query})
-    //       .then(function(response){
-    //         // console.log(response);
-    //         var games = response.data.games;
-    //         return games.map(function(game) {
-    //           return game.name;
-    //         });
-    //       });
-    //   };
 
   function checkToSee(){
     self.currentUser = CurrentUser.getUser();
@@ -60,11 +44,10 @@ angular
 
   function updateUser() {
       User.update({ id: self.user._id }, { user: self.user }, function(data){
-        console.log('data: ', data)
         self.user = data;
       });
-      self.currentUser = CurrentUser.getUser();
       self.getUsers();
+      self.currentUser = CurrentUser.getUser();
     } 
 
 
