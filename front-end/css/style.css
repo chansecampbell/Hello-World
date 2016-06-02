@@ -128,6 +128,7 @@ h1, h2 {
 .media-object {
   max-width: 100px;
   border-radius: 100%;
+  display: inline-block;
 }
 
 /***************** JOURNEY SHOW PAGE ********************/
@@ -275,7 +276,7 @@ img.journey-photo-stream {
 
     .navbar-fixed-bottom {
       display: block;
-      margin-top: 30px;
+      padding-top: 10px;
     }
 
     .top-header-nav {
@@ -291,6 +292,11 @@ img.journey-photo-stream {
 
     .footer-nav-links a {
       padding-left: 40px;
+    }
+
+    .spacer {
+      padding-top: 30px;
+      margin-top: 30px;
     }
 }
 
