@@ -13,8 +13,8 @@
         </a>
       </div>
       <div class="col-md-8">
-        <a ui-sref="journey({ id: journey._id })">
-        <div class="media-body">
+        <a class="journey-show-post-links" ui-sref="journey({ id: journey._id })">
+        <div class="media-body journey-show-post">
         <h3 class="media-heading">{{ journey.users[0].firstName }} {{ journey.users[0].lastName }}</h3>
         <p><strong>{{ journey.country.name }}</strong> added as a destination
           <p>"<em>{{ journey.description }}</em>"</p>

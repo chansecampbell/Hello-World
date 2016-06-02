@@ -119,6 +119,22 @@ h1, h2 {
   border-radius: 100%;
 }
 
+/***************** JOURNEY SHOW PAGE ********************/
+
+.journey-show-post-links {
+  color: #424242;
+  } 
+
+  .journey-show-post-links:hover {
+    color: #424242;
+    font-weight: 700;
+    text-decoration: none;
+    } 
+
+.journey-show-post {
+  border-bottom: 3px solid #3498db;
+  }
+
 
 /***************** COUNTRIES INDEX PAGE ********************/
 
