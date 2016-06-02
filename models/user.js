@@ -11,7 +11,7 @@ var userSchema = mongoose.Schema({
     email: { type: String, unique: true, required: true },
     passwordHash: { type: String },
     age: { type: Number },
-    nationality: { type: String },
+    location: { type: String },
     journeys: [{type: mongoose.Schema.ObjectId, ref: 'Journey'}],
     countries: [{type: mongoose.Schema.ObjectId, ref: 'Country'}]
   });

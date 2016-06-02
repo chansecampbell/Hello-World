@@ -45,78 +45,57 @@
         <a class="navbar-brand" id="title-header" href="#" ui-sref-active="active" ui-sref="home">Hello World .</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
-      <li ng-show="users.checkLoggedIn()">
-                <a class="top-header-nav">Welcome, {{ users.currentUser.firstName }}</a>
-              </li>
-              <li ng-show="users.checkLoggedIn()">
-                <a href="#" class="top-header-nav" ui-sref="journeys">Feed</a>
-              </li> 
-              <li ng-show="users.checkLoggedIn()">
-                <a href="#" class="top-header-nav" ui-sref="user({ id: users.currentUser._id })">Profile</a>
-              </li>
-              <li ng-show="users.checkLoggedIn()">
-                <a href="#" class="top-header-nav" ui-sref="countries">Map</a>
-              </li>
-              <li ng-hide="users.checkLoggedIn()">
-                <a class="top-header-nav" ng-click="users.authenticate('facebook')">Sign in with Facebook</a>
-              </li>
-              <li ng-hide="users.checkLoggedIn()">
-                <a class="top-header-nav" href="#" ui-sref="login">Login</a>
-              </li>
-              <li ng-hide="users.checkLoggedIn()">
-                <a class="top-header-nav" href="#" ui-sref="register">Register</a>
-              </li>
-              <li ng-show="users.checkLoggedIn()">
-                <a class="top-header-nav" href="#"ui-sref="home" ng-click="users.logout()">Logout</a>
-              </li>
-            </ul>
+        <li ng-show="users.checkLoggedIn()">
+          <a class="top-header-nav">Welcome, {{ users.currentUser.firstName }}</a>
+        </li>
+        <li ng-show="users.checkLoggedIn()">
+          <a href="#" class="top-header-nav" ui-sref="journeys">Feed</a>
+        </li> 
+        <li ng-show="users.checkLoggedIn()">
+          <a href="#" class="top-header-nav" ui-sref="user({ id: users.currentUser._id })">Profile</a>
+        </li>
+        <li ng-show="users.checkLoggedIn()">
+          <a href="#" class="top-header-nav" ui-sref="countries">Map</a>
+        </li>
+        <li ng-hide="users.checkLoggedIn()">
+          <a class="top-header-nav" ng-click="users.authenticate('facebook')">Sign in with Facebook</a>
+        </li>
+        <li ng-hide="users.checkLoggedIn()">
+          <a class="top-header-nav" href="#" ui-sref="login">Login</a>
+        </li>
+        <li ng-hide="users.checkLoggedIn()">
+          <a class="top-header-nav" href="#" ui-sref="register">Register</a>
+        </li>
+        <li ng-show="users.checkLoggedIn()">
+          <a class="top-header-nav" href="#"ui-sref="home" ng-click="users.logout()">Logout</a>
+        </li>
+      </ul>
     </div>
   </nav>
 </header>
 
 <body ng-controller="UsersController as users">
  
-<!--  <div class="list-group">
-   <a class="list-group-item" href="#"><i class="mg map-glb-eu mg-fw"></i>&nbsp; Europe</a>
-   <a class="list-group-item" href="#"><i class="mg map-glb-am mg-fw"></i>&nbsp; The Americas</a>
-   <a class="list-group-item" href="#"><i class="mg map-glb-as mg-fw"></i>&nbsp; Asia</a>
-   <a class="list-group-item" href="#"><i class="mg map-glb-af mg-fw"></i>&nbsp; Africa</a>
- </div> -->
   <main id="main" ui-view></main>
 
 
-<!--   <footer>
+  <footer>
     <nav class="navbar navbar-default navbar-fixed-bottom">
       <div class="container">
 
-          <ul class="nav navbar-nav">
-            <li ng-show="users.checkLoggedIn()">
-              <a href="#">Welcome, {{ users.currentUser.name }}</a>
-            </li>
-            <li ng-show="users.checkLoggedIn()">
-              <a href="#" ui-sref="journeys">Feed</a>
-            </li> 
-            <li ng-show="users.checkLoggedIn()">
-              <a href="#" ui-sref="user({ id: users.currentUser._id })">Profile</a>
-            </li>
-            <li ng-show="users.checkLoggedIn()">
-              <a href="#" ui-sref="countries">Map</a>
-            </li>
-            <li ng-hide="users.checkLoggedIn()">
-              <a ng-click="users.authenticate('facebook')">Sign in with Facebook</a>
-            </li>
-            <li ng-hide="users.checkLoggedIn()">
-              <a href="#" ui-sref="login">Login</a>
-            </li>
-            <li ng-hide="users.checkLoggedIn()">
-              <a href="#" ui-sref="register">Register</a>
-            </li>
-            <li ng-show="users.checkLoggedIn()">
-              <a href="#"ui-sref="home" ng-click="users.logout()">Logout</a>
-            </li>
-          </ul>
-          </div>
+        <a ng-show="users.checkLoggedIn()" class="top-header-nav">Welcome, {{ users.currentUser.firstName }}</a>
+        <a ng-show="users.checkLoggedIn()" class="top-header-nav" ui-sref="journeys">Feed</a>
+
+        <a ng-show="users.checkLoggedIn()" class="top-header-nav" ui-sref="user({ id: users.currentUser._id })">Profile</a>
+
+        <a ng-show="users.checkLoggedIn()" class="top-header-nav" ui-sref="countries">Map</a>
+
+        <a ng-hide="users.checkLoggedIn()" class="top-header-nav" ng-click="users.authenticate('facebook')">Sign in with Facebook</a>
+        <a ng-hide="users.checkLoggedIn()" class="top-header-nav" ui-sref="login">Login</a>
+        <a ng-hide="users.checkLoggedIn()" class="top-header-nav" ui-sref="register">Register</a>
+        <a ng-show="users.checkLoggedIn()" class="top-header-nav" ui-sref="home" ng-click="users.logout()">Logout</a>
+      </div>
     </nav>
-  </footer> -->
+  </footer>
 </body>
 </html>

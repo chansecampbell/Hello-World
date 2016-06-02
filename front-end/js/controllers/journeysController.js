@@ -15,6 +15,7 @@ function JourneysController(Journey, $state, CurrentUser, User) {
   function getJourneys() {
     Journey.query(function(data){
       self.all = data.journeys;
+      console.log(self.all);
     });
   }
 

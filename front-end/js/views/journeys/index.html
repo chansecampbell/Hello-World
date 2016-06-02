@@ -9,12 +9,14 @@
         <img ng-src="{{ journey.users[0].picture }}" class="media-object">
         </a>
       </div>
+      <a ui-sref="journey({ id: journey._id })">
       <div class="media-body">
         <h4 class="media-heading">{{ journey.users[0].firstName }} added {{ journey.country.name }} as a destination</h4>
         <p><strong>Description:</strong> {{ journey.description }}</p>
         <p><strong>From:</strong> {{ journey.start }}</p>
         <p><strong>To:</strong> {{ journey.end }}</p>
       </div>
+      </a>
     </li>
   </ul>
   </div>

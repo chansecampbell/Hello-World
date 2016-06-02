@@ -56,7 +56,7 @@ angular
     $auth.authenticate(provider);
     self.currentUser = CurrentUser.getUser();
     self.getUsers();
-    $state.go("home");
+    $state.go("journeys");
   };
 
 
@@ -64,7 +64,7 @@ angular
     var token = res.token ? res.token : null;
     if (token) {
       self.getUsers();
-      $state.go('home');
+      $state.go('journeys');
     }
     self.currentUser = CurrentUser.getUser();
   }

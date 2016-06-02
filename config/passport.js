@@ -19,8 +19,11 @@ module.exports = function(passport) {
 
       var newUser            = new User();
       newUser.email    = req.body.email;
-      newUser.name     = req.body.name;
+      newUser.firstName  = req.body.firstName;
+      newUser.lastName  = req.body.lastName;
       newUser.picture  = req.body.picture;
+      newUser.age      = req.body.age;
+      newUser.location = req.body.location;
       newUser.password = req.body.password;
       newUser.passwordConfirmation = req.body.passwordConfirmation;
 
