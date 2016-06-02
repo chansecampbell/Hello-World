@@ -2,8 +2,8 @@ angular
 .module('logging')
 .controller('JourneysController', JourneysController);
 
-JourneysController.$inject = ['Journey', '$state', 'CurrentUser', 'User', '$stateParams', 'Upload', 'API', 'AWS_URL'];
-function JourneysController(Journey, $state, CurrentUser, User, $stateParams, Upload, API, AWS_URL) {
+JourneysController.$inject = ['Journey', '$state', 'CurrentUser', 'User', '$stateParams', 'Upload', 'API', 'AWS_URL', 'URL'];
+function JourneysController(Journey, $state, CurrentUser, User, $stateParams, Upload, API, AWS_URL, URL) {
   var self               = this;
   self.all               = [];
   self.journey           = null;
@@ -44,7 +44,7 @@ function JourneysController(Journey, $state, CurrentUser, User, $stateParams, Up
 
   this.uploadSingle = function() {
     Upload.upload({
-      url: 'http://localhost:3000/upload/single',
+      url: URL + '/upload/single',
       data: { file: self.file }
     })
     .then(function(res) {
@@ -59,13 +59,13 @@ function JourneysController(Journey, $state, CurrentUser, User, $stateParams, Up
   function uploadMulti() {
     console.log("hello");
     Upload.upload({
-      url: API + '/upload/multi',
+      url: URL + '/upload/multi',
       arrayKey: '', // IMPORTANT: without this multer will not accept the files
       data: { files: self.files }
     })
     .then(function(res) {
       console.log("Success!");
-      self.uploadedFiles = res.data.filenames.map(function(filename) {
+      self.journey.pictures = res.data.filenames.map(function(filename) {
         return AWS_URL + filename
       });
     })

@@ -1,6 +1,7 @@
 angular
   .module('logging', ['angular-jwt', 'ngResource', 'ui.router', 'satellizer', 'ui.bootstrap', 'ngFileUpload'])
   .constant('API', 'http://localhost:3000/api')
+  .constant('URL', 'http://localhost:3000')
   .constant('AWS_URL', 'https://s3-eu-west-1.amazonaws.com/wd19-skwap/')
   .config(MainRouter)
   .config(oauthConfig)

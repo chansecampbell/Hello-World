@@ -49,19 +49,15 @@
           </div>
         </div>
         <div class="row">
-         <div class="col-md-4">
+         <div class="col-md-12">
            <fieldset class="form-group">
-             <input type="text" name='pictures' id="journey-pictures" class="form-control" ng-model="journeys.journey.pictures" placeholder="Add a picture">
-           </fieldset>
-         </div>
-         <div class="col-md-4">
-           <fieldset class="form-group">
-             <input type="text" name='pictures' id="journey-pictures" class="form-control" ng-model="journeys.journey.pictures" placeholder="Add a picture">
-           </fieldset>
-         </div>
-         <div class="col-md-4">
-           <fieldset class="form-group">
-             <input type="text" name='pictures' id="journey-pictures" class="form-control" ng-model="journeys.journey.pictures" placeholder="Add a picture">
+             <input type="file" ngf-select ng-model="journeys.files" name="files" class="form-control" ngf-multiple="true">
+             <label><a ng-click="journeys.uploadMulti()">Click to Upload</a></label>
+             <ul>
+              <li ng-repeat="file in journeys.journey.pictures">
+                <!-- <img ng-src="{{file}}"> -->
+              </li>
+             </ul>
            </fieldset>
          </div>
        </div>
@@ -70,20 +66,13 @@
        </fieldset>
      </form>
 
-     Upload single file on form submit
-     <img ng-src="{{journeys.uploadedFile}}">
+<!--      Upload single file on form submit
+ --><!--      <img ng-src="{{journeys.uploadedFile}}">
      <form name="journeys.form" ng-submit="journeys.uploadSingle()">
        <input type="file" ngf-select ng-model="journeys.file" name="file">Select File
        <button type="submit" ng-click="journeys.uploadSingle()">Submit</button>
      </form>
 
-
-     Upload multiple files on form submit
-     <img ng-repeat="filename in journeys.uploadedFiles" ng-src="{{filename}}">
-     <form name="journeys.multiForm" ng-submit="journeys.uploadMulti()">
-      <input type="file" ngf-select ng-model="journeys.files" name="files" ngf-multiple="true">Select Files
-      <button type="submit">Submit</button>
-    </form>
   </div>
 </section>
 </div>
