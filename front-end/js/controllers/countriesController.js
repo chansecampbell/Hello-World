@@ -24,7 +24,7 @@ function CountriesController(Country, Journey, User, $state, CurrentUser) {
       self.users = data.users
       self.currentUser = CurrentUser.getUser();
       for (var j = 0; j < self.users.length; j++){
-        if (self.users[j].name == self.currentUser.name ) {
+        if (self.users[j].firstName == self.currentUser.firstName ) {
           for (var i = 0; i < self.users[j].countries.length; i++ ) {
           console.log(self.users[j].countries);
           self.countries.push(self.users[j].countries[i].countryCode);

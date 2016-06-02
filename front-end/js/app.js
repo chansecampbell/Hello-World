@@ -68,11 +68,8 @@ function MainRouter($stateProvider, $urlRouterProvider) {
     .state('journey', {
       url: "/journeys/:id",
       templateUrl: "./js/views/journeys/show.html",
-      controller: function($scope, $stateParams, Journey) {
-        Journey.get({ id: $stateParams.id }, function(res){
-          $scope.$parent.journeys.journey = res.journey;
-        });
-      }
+      controller: 'JourneyShowController',
+      controllerAs: 'journeyShow'
     });
 
   $urlRouterProvider.otherwise("/");

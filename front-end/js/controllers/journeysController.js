@@ -2,8 +2,8 @@ angular
 .module('logging')
 .controller('JourneysController', JourneysController);
 
-JourneysController.$inject = ['Journey', '$state', 'CurrentUser', 'User'];
-function JourneysController(Journey, $state, CurrentUser, User) {
+JourneysController.$inject = ['Journey', '$state', 'CurrentUser', 'User', '$stateParams'];
+function JourneysController(Journey, $state, CurrentUser, User, $stateParams) {
   var self               = this;
   self.all               = [];
   self.journey           = null;
@@ -16,6 +16,7 @@ function JourneysController(Journey, $state, CurrentUser, User) {
     Journey.query(function(data){
       self.all = data.journeys;
       console.log(self.all);
+      console.log($stateParams);
     });
   }
 
@@ -35,6 +36,7 @@ function JourneysController(Journey, $state, CurrentUser, User) {
       });
     }
   }
+
 
   self.getJourneys();
 
