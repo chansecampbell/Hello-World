@@ -32,14 +32,20 @@
       </div>
       <div class="row">
         <div class="col-md-12 user-profile-text">
-        <h3>Photo Stream:</h3>
-          <img src="{{ journeyShow.journey.pictures[0] }}">
-        </div>
-      </div>
+          <h3>Photo Stream:</h3>
+          <ul class="col-md-4 col-xs-6 user-countries" ng-repeat="picture in journeyShow.journey.pictures">
 
+            <li>
+              <div class="image-square-wrapper">
+                <img src="{{ picture }}" class="journey-photo-stream">
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
-</section>
+
+  </section>
 </div>
 </div>

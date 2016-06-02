@@ -24,10 +24,6 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       url: "/register",
       templateUrl: "./js/views/authentications/register.html"
     })
-    .state('users', {
-      url: "/users",
-      templateUrl: "./js/views/users/index.html"
-    })
     .state('user', {
       url: "/users/:id",
       templateUrl: "./js/views/users/show.html",

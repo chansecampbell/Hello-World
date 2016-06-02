@@ -13,6 +13,10 @@ a {
   cursor: pointer;
 }
 
+ul, li {
+  list-style-type: none;
+}
+
 /*section {
   margin-bottom: 50px;
 }*/
@@ -136,6 +140,18 @@ h1, h2 {
   }
 
 
+
+div.image-square-wrapper {
+  max-width: 400px;
+  max-height: 400px;
+}
+
+img.journey-photo-stream {
+  max-height: 100%;
+  max-width: 100%;
+  border: 3px solid #616161;
+}
+
 /***************** COUNTRIES INDEX PAGE ********************/
 
 #world-map {
@@ -213,4 +229,17 @@ h1, h2 {
       font-weight: 700;
       color: #f5f5f5;
     }
+}
+
+
+.col-md-8.col-md-offset-2.col-border .row {
+  width: 100% !important;
+}
+
+.col-md-8.col-md-offset-2.col-border .container {
+  width: 100% !important;
+}
+
+img.profile-picture {
+  max-width: 100%;
 }
