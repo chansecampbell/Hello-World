@@ -10,10 +10,10 @@ var userSchema = mongoose.Schema({
     facebookId: { type: String },
     email: { type: String, unique: true, required: true },
     passwordHash: { type: String },
-    birthday: { type: Date },
-    location: { type: String },
+    age: { type: Number },
+    nationality: { type: String },
     journeys: [{type: mongoose.Schema.ObjectId, ref: 'Journey'}],
-    countries: [{type: mongoose.Schema.ObjectId, ref: 'Country'}],
+    countries: [{type: mongoose.Schema.ObjectId, ref: 'Country'}]
   });
 
 userSchema.methods.validatePassword = function(password){

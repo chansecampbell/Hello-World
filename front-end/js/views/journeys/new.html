@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-border">
+    <section>
+      <h1>Add a new Journey</h1>
+      <div ng-controller="JourneysController as journeys"> 
+       <form id="edit-user" class="form-group" ng-submit="journeys.updateJourney()">
+         <div class="row">
+           <div class="col-md-12">
+
+             <input type="text" 
+             data-ng-model="journeys.journey.country" 
+             placeholder="Where did you go?" 
+             uib-typeahead="country for country in users.getCountries($viewValue)" 
+             typeahead-loading="loadingCountries" 
+             typeahead-no-results="noResults" 
+             class="form-control">
+
+             <i ng-show="loadingCountries" 
+             class="glyphicon glyphicon-refresh"></i>
+
+             <div ng-show="noResults">
+               <i class="glyphicon glyphicon-remove"></i> No Results Found
+             </div> 
+
+
+           </div>
+         </div>
+         <div class="row">
+           <div class="col-md-6">
+             <input type="date" name='journey-start' id="journey-start" class="form-control" ng-model="journeys.journey.start">
+           </div>
+           <div class="col-md-6">
+            <input type="date" name='journey-end' id="journey-end" class="form-control" ng-model="journeys.journey.end">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+           <textarea type="text" name='description' id="journey-description" class="form-control" ng-model="journeys.journey.description"></textarea>
+         </div>
+       </div>
+       <div class="row">
+         <div class="col-md-4">
+           <input type="text" name='pictures' id="journey-pictures" class="form-control" ng-model="journeys.journey.pictures" placeholder="Add a picture">
+         </div>
+         <div class="col-md-4">
+           <input type="text" name='pictures' id="journey-pictures" class="form-control" ng-model="journeys.journey.pictures" placeholder="Add a picture">
+         </div>
+         <div class="col-md-4">
+           <input type="text" name='pictures' id="journey-pictures" class="form-control" ng-model="journeys.journey.pictures" placeholder="Add a picture">
+         </div>
+       </div>
+       <input type="submit" value='Add Journey' id="submit" ng-click="showjourney=false" class="btn">
+     </form>
+   </div>
+ </section>
+</div>
+</div>

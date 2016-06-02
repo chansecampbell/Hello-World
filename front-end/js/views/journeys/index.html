@@ -1,6 +1,6 @@
  <div class="row">
    <div class="col-md-8 col-md-offset-2 col-border"> 
- <h1>What's going on in the world</h1>
+ <h1>Journey Feed</h1>
   <div ng-controller="JourneysController as journeys">  
   <ul class="media-list">
     <li class="media" ng-repeat="journey in journeys.all">
@@ -10,7 +10,7 @@
         </a>
       </div>
       <div class="media-body">
-        <h4 class="media-heading">{{ journey.users[0].name }} went to {{ journey.country.name }}</h4>
+        <h4 class="media-heading">{{ journey.users[0].firstName }} added {{ journey.country.name }} as a destination</h4>
         <p><strong>Description:</strong> {{ journey.description }}</p>
         <p><strong>From:</strong> {{ journey.start }}</p>
         <p><strong>To:</strong> {{ journey.end }}</p>

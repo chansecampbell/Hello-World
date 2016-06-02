@@ -76,8 +76,6 @@ app.post('/api/auth/facebook', function(req, res) {
               facebookId: profile.id,
               firstName: profile.first_name,
               lastName: profile.last_name,
-              birthday: profile.birthday,
-              location: profile.location,
               picture: profile.picture.data.url,
               email: profile.email
             });

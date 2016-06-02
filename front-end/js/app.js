@@ -52,6 +52,10 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       url: "/journeys",
       templateUrl: "./js/views/journeys/index.html"
     })
+    .state('journeysNew', {
+      url: "/journeys/new",
+      templateUrl: "./js/views/journeys/new.html"
+    })
     .state('journey', {
       url: "/journeys/:id",
       templateUrl: "./js/views/journeys/show.html",
