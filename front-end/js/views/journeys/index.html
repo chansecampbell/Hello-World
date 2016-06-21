@@ -7,18 +7,15 @@
 
 
     <div class="row journey-row">
-      <div class="col-md-2 col-md-offset-1">
+      <div class="col-md-4">
         <a ui-sref="user({ id: journey.users[0]._id })">
            <img ng-src="{{ journey.users[0].picture }}" class="media-object">
         </a>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-8">
         <a class="journey-show-post-links" ui-sref="journey({ id: journey._id })">
         <div class="media-body journey-show-post">
-        <h3 class="media-heading">{{ journey.users[0].firstName }} {{ journey.users[0].lastName }}</h3>
-        <p><strong>{{ journey.country.name }}</strong> added as a destination
-          <p>"<em>{{ journey.description }}</em>"</p>
-          <p><strong>View Journey -></strong></p>
+        <h3 class="media-heading">{{ journey.users[0].firstName }} {{ journey.users[0].lastName }} went to {{ journey.country.name }}</h3>
         </div>
         </a>
         </div>
