@@ -14,7 +14,9 @@ function JourneysController(Journey, $state, CurrentUser, User, $stateParams, Up
   self.file = null;
   self.uploadedFile = null;
   self.files = null;
+  self.uploadSingle =  uploadSingle;
   self.uploadMulti =  uploadMulti;
+  self.checkUsersJourneys = checkUsersJourneys;
 
 
   function getJourneys() {
@@ -42,7 +44,13 @@ function JourneysController(Journey, $state, CurrentUser, User, $stateParams, Up
     }
   }
 
-  this.uploadSingle = function() {
+  function checkUsersJourneys(){
+    console.log("hello!");
+    // Here we want to use currentUser to find only the journeys of the person logged in..
+  }
+
+
+  function uploadSingle() {
     Upload.upload({
       url: URL + '/upload/single',
       data: { file: self.file }
