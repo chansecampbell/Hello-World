@@ -1,13 +1,13 @@
  <div class="row">
-   <div class="col-md-8 col-md-offset-2 col-border journey-wrapper"> 
+   <div class="col-md-6 col-md-offset-3 col-border journey-wrapper"> 
  <h1>Journey Feed</h1>
   <div ng-controller="JourneysController as journeys">  
   <ul class="media-list">
     <li class="media" ng-repeat="journey in journeys.all">
 
 
-    <div class="row">
-      <div class="col-md-2">
+    <div class="row journey-row">
+      <div class="col-md-2 col-md-offset-1">
         <a ui-sref="user({ id: journey.users[0]._id })">
            <img ng-src="{{ journey.users[0].picture }}" class="media-object">
         </a>

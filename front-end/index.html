@@ -21,6 +21,7 @@
 
   <script src="//cdn.jsdelivr.net/satellizer/0.13.1/satellizer.min.js"></script>
   <script src="./js/app.js"></script>
+  <script src="./js/world.js"></script>
   <script src="./js/models/user.js"></script>
   <script src="./js/models/journey.js"></script>
   <script src="./js/models/country.js"></script>
@@ -48,7 +49,7 @@
   <nav class="navbar navbar-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" id="title-header" href="#" ui-sref-active="active" ui-sref="home">Hello World
+        <a class="navbar-brand transition" id="title-header" href="#" ui-sref-active="active" ui-sref="home">Hello World
         </a>
       </div>
       <ul class="nav navbar-nav navbar-right">
@@ -56,59 +57,59 @@
           <a class="top-header-nav">Welcome, {{ users.currentUser.firstName }}</a>
         </li>
         <li ng-show="users.checkLoggedIn()">
-          <a href="#" class="top-header-nav" ui-sref="journeys">Feed</a>
+          <a href="#" class="top-header-nav transition" ui-sref="journeys">Feed</a>
         </li> 
         <li ng-show="users.checkLoggedIn()">
-          <a href="#" class="top-header-nav" ui-sref="user({ id: users.currentUser._id })">Profile</a>
+          <a href="#" class="top-header-nav transition" ui-sref="user({ id: users.currentUser._id })">Profile</a>
         </li>
         <li ng-show="users.checkLoggedIn()">
-          <a href="#" class="top-header-nav" ui-sref="countries">Map</a>
+          <a href="#" class="top-header-nav transition" ui-sref="countries">Map</a>
         </li>
         <li ng-hide="users.checkLoggedIn()">
-          <a class="top-header-nav" ng-click="users.authenticate('facebook')">Sign in with Facebook</a>
+          <a class="top-header-nav transition" ng-click="users.authenticate('facebook')">Sign in with Facebook</a>
         </li>
         <li ng-hide="users.checkLoggedIn()">
-          <a class="top-header-nav" href="#" ui-sref="login">Login</a>
+          <a class="top-header-nav transition" href="#" ui-sref="login">Login</a>
         </li>
         <li ng-hide="users.checkLoggedIn()">
-          <a class="top-header-nav" href="#" ui-sref="register">Register</a>
+          <a class="top-header-nav transition" href="#" ui-sref="register">Register</a>
         </li>
         <li ng-show="users.checkLoggedIn()">
-          <a class="top-header-nav" href="#"ui-sref="home" ng-click="users.logout()">Logout</a>
+          <a class="top-header-nav transition" href="#"ui-sref="home" ng-click="users.logout()">Logout</a>
         </li>
       </ul>
     </div>
   </nav>
 </header>
  
-  <main id="main" ui-view></main>
+  <main id="main" class="fade-in one" ui-view></main>
 
   <div class="spacer"></div>
   <footer>
     <nav class="navbar navbar-default navbar-fixed-bottom">
       <div class="container footer-nav-links">
-        <a ng-show="users.checkLoggedIn()" class="top-header-nav" ui-sref="journeys">
+        <a ng-show="users.checkLoggedIn()" class="top-header-nav transition" ui-sref="journeys">
           <i class="fa fa-home fa-3x"></i>
         </a>
 
-        <a ng-show="users.checkLoggedIn()" class="top-header-nav" ui-sref="user({ id: users.currentUser._id })">
+        <a ng-show="users.checkLoggedIn()" class="top-header-nav transition" ui-sref="user({ id: users.currentUser._id })">
           <i class="fa fa-user fa-3x"></i>
         </a>
 
-        <a ng-show="users.checkLoggedIn()" class="top-header-nav" ui-sref="countries">
+        <a ng-show="users.checkLoggedIn()" class="top-header-nav transition" ui-sref="countries">
           <i class="fa fa-globe fa-3x"></i>
         </a>
 
-        <a ng-hide="users.checkLoggedIn()" class="top-header-nav" ng-click="users.authenticate('facebook')">
+        <a ng-hide="users.checkLoggedIn()" class="top-header-nav transition" ng-click="users.authenticate('facebook')">
           <i class="fa fa-facebook-square fa-3x"></i>
         </a>
-        <a ng-hide="users.checkLoggedIn()" class="top-header-nav" ui-sref="login">
+        <a ng-hide="users.checkLoggedIn()" class="top-header-nav transition" ui-sref="login">
         <i class="fa fa-sign-in fa-3x"></i>
         </a>
-        <a ng-hide="users.checkLoggedIn()" class="top-header-nav" ui-sref="register">
+        <a ng-hide="users.checkLoggedIn()" class="top-header-nav transition" ui-sref="register">
         <i class="fa fa-user-plus fa-3x"></i>
         </a>
-        <a ng-show="users.checkLoggedIn()" class="top-header-nav" ui-sref="home" ng-click="users.logout()">
+        <a ng-show="users.checkLoggedIn()" class="top-header-nav transition" ui-sref="home" ng-click="users.logout()">
         <i class="fa fa-sign-out fa-3x"></i>
         </a>
       </div>
