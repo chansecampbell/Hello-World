@@ -123,16 +123,21 @@ h1, h2 {
 
 /***************** HOME PAGE ********************/
 
-
 #world {
-  height: 500px;
+  height: 600px;
   display: block;
   width: auto;
   margin: 0 auto;
 }
 
+.front-page-header-top {
+  color: #3498db;
+  text-align: center;
+}
+
 .front-page-header {
-  color: #27ae60;
+  text-align: center;
+  color: #3498db;
 }
 
 /***************** JOURNEY INDEX PAGE ********************/
@@ -286,6 +291,11 @@ img.journey-photo-stream {
     height: 350px;
   }
 
+  .front-page-header-top,
+  .front-page-header {
+    display: none;
+    }
+
 }
 
 @media only screen and (max-width: 767px) {
@@ -321,6 +331,12 @@ img.journey-photo-stream {
     #world {
       height: 250px;
     }
+
+    .front-page-header-top,
+    .front-page-header {
+      display: none;
+      }
+
 }
 
 
@@ -360,15 +376,15 @@ img.profile-picture {
 
 .spin{
     -webkit-animation-name: spinnerRotate;
-    -webkit-animation-duration: 30s;
+    -webkit-animation-duration: 60s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
     -moz-animation-name: spinnerRotate;
-    -moz-animation-duration: 30s;
+    -moz-animation-duration: 60s;
     -moz-animation-iteration-count: infinite;
     -moz-animation-timing-function: linear;
     -ms-animation-name: spinnerRotate;
-    -ms-animation-duration: 30s;
+    -ms-animation-duration: 60s;
     -ms-animation-iteration-count: infinite;
     -ms-animation-timing-function: linear;
 }

@@ -1,12 +1,12 @@
 <br>
 <br>
-<div class="row">
+<br>
   <div class="col-md-8 col-md-offset-2 col-border">
    <section>
     <div class="container">
       <div class="row">
         <div class="col-md-6 user-profile-text edit-hover">
-          <a class="profile-picture-link" ui-sref="usersEdit({ id: users.user._id })">
+          <a class="profile-picture-link transition" ui-sref="usersEdit({ id: users.user._id })">
             <img ng-src="{{ users.user.picture }}" id="profile-picture">
             <p>Edit Profile</p>
           </a>
@@ -26,10 +26,7 @@
    <i class="mg map-{{ country.countryCode.toLowerCase() }}" ></i><br>
    <h3>{{ country.name }}</h3>
    </div>
- </div>
-
 
 </section>
 
-</div>
 </div>

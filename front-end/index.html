@@ -55,28 +55,28 @@
       </div>
       <ul class="nav navbar-nav navbar-right">
         <li ng-show="users.checkLoggedIn()">
-          <a class="top-header-nav">Welcome, {{ users.currentUser.firstName }}</a>
+          <a class="top-header-nav"><i class="fa fa-hand-peace-o fa-2x"></i> Welcome, {{ users.currentUser.firstName }}</a>
         </li>
         <li ng-show="users.checkLoggedIn()">
-          <a href="#" class="top-header-nav transition" ui-sref="journeys">Feed</a>
+          <a href="#" class="top-header-nav transition" ui-sref="journeys"><i class="fa fa-home fa-2x"></i> Feed</a>
         </li> 
         <li ng-show="users.checkLoggedIn()">
-          <a href="#" class="top-header-nav transition" ui-sref="user({ id: users.currentUser._id })">Profile</a>
+          <a href="#" class="top-header-nav transition" ui-sref="user({ id: users.currentUser._id })"><i class="fa fa-user fa-2x"></i> Profile</a>
         </li>
         <li ng-show="users.checkLoggedIn()">
-          <a href="#" class="top-header-nav transition" ui-sref="countries">Map</a>
+          <a href="#" class="top-header-nav transition" ui-sref="countries"><i class="fa fa-globe fa-2x"></i> Map</a>
         </li>
         <li ng-hide="users.checkLoggedIn()">
-          <a class="top-header-nav transition" ng-click="users.authenticate('facebook')">Sign in with Facebook</a>
+          <a class="top-header-nav transition" ng-click="users.authenticate('facebook')"><i class="fa fa-facebook-square fa-2x"></i> Sign in with Facebook</a>
         </li>
         <li ng-hide="users.checkLoggedIn()">
-          <a class="top-header-nav transition" href="#" ui-sref="login">Login</a>
+          <a class="top-header-nav transition" href="#" ui-sref="login"><i class="fa fa-sign-in fa-2x"></i> Login</a>
         </li>
         <li ng-hide="users.checkLoggedIn()">
-          <a class="top-header-nav transition" href="#" ui-sref="register">Register</a>
+          <a class="top-header-nav transition" href="#" ui-sref="register"><i class="fa fa-user-plus fa-2x"></i> Register</a>
         </li>
         <li ng-show="users.checkLoggedIn()">
-          <a class="top-header-nav transition" href="#"ui-sref="home" ng-click="users.logout()">Logout</a>
+          <a class="top-header-nav transition" href="#"ui-sref="home" ng-click="users.logout()"><i class="fa fa-sign-out fa-2x"></i> Logout</a>
         </li>
       </ul>
     </div>
