@@ -1,11 +1,25 @@
-   <div class="col-md-6 col-md-offset-3 col-border journey-wrapper"> 
- <h1>Journey Feed</h1>
+<br>
+<br>
+   <div class="col-md-12"> 
   <div ng-controller="JourneysController as journeys">  
-  <ul class="media-list">
-    <li class="media" ng-repeat="journey in journeys.all">
+  <!-- <ul class="media-list">
+    <li class="media" ng-repeat="journey in journeys.all"> -->
 
 
-    <div class="row journey-row">
+    <div class="row">
+      <div class="col-sm-6 col-md-4" ng-repeat="journey in journeys.all">
+        <div class="thumbnail">
+        <a class="journey-show-post-links transition" ui-sref="journey({ id: journey._id })">
+        <i class="mg map-{{ journey.country.countryCode.toLowerCase() }} mg-journey" ></i>
+        </a>
+          <div class="caption">
+            <h3>{{ journey.country.name }}</h3>
+            <p>{{ journey.users[0].firstName }} {{ journey.users[0].lastName }} added a country</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row">
       <div class="col-md-4">
         <a class="transition" ui-sref="user({ id: journey.users[0]._id })">
            <img ng-src="{{ journey.users[0].picture }}" class="media-object">
@@ -18,9 +32,9 @@
         </div>
         </a>
         </div>
-        </div>
-    </li>
-  </ul>
+        </div> -->
+<!--     </li>
+  </ul> -->
   </div>
 </div>
 

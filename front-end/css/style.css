@@ -154,6 +154,15 @@ h1, h2 {
   padding-top: 5px;
 }
 
+.thumbnail {
+  border: none;
+  text-align: center;
+}
+
+.caption {
+  text-align: center;
+}
+
 /***************** JOURNEY SHOW PAGE ********************/
 
 .journey-show-post-links {
