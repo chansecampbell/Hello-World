@@ -131,6 +131,7 @@ h1, h2 {
 }
 
 .front-page-header-top {
+  margin-top: 200px;
   color: #3498db;
   text-align: center;
 }
@@ -297,12 +298,12 @@ img.journey-photo-stream {
   }
 
   #world {
-    height: 350px;
+    height: 400px;
   }
 
   .front-page-header-top,
   .front-page-header {
-    display: none;
+   margin-top: 0px;
     }
 
 }
@@ -338,12 +339,13 @@ img.journey-photo-stream {
     }
 
     #world {
-      height: 250px;
+      height: 300px;
     }
 
     .front-page-header-top,
     .front-page-header {
-      display: none;
+      margin-top: 0px;
+
       }
 
 }
